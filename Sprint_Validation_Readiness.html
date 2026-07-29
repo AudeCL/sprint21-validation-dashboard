@@ -551,6 +551,17 @@
             font-size: 0.8em;
             transition: width 1s ease;
         }
+        .progress-bar-container {
+            position: relative;
+        }
+        .confetti-canvas {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+            border-radius: 12px;
+            overflow: hidden;
+        }
         .progress-fill.low {
             background: var(--rc-red);
         }
@@ -717,7 +728,7 @@
             </div>
         </div>
         <div class="data-refresh-notice">
-            <strong>ℹ️ Data Refresh:</strong> ADO data last extracted on <strong>July 28, 2026 at 12:42 PM CEST</strong>.
+            <strong>ℹ️ Data Refresh:</strong> ADO data last extracted on <strong>July 29, 2026 at 8:37 AM CEST</strong>.
             Validations completed in ADO after this time may not be reflected yet. Dashboard will be refreshed periodically.
         </div>
     </div>
@@ -878,14 +889,14 @@
             {id:"1454200",title:"[OM] Return Request - Restrict available Return Reasons for B2B Customers",assignee:"Harry",state:"Ready to build",tags:["eB2B","Order Mgmt"],t:1,u:0,d:0,b:1,sp:2,parent:"970206"},
             // Aude Claquesin
             {id:"1468710",title:"[OM][Tech] Product - Enhance ZREP vs. Copack Item Type Classification",assignee:"Aude",state:"New",tags:["0.6 Dependent","Data","eB2B","Order Mgmt"],t:0,u:0,d:0,b:0,sp:1,parent:"1016086"},
-            {id:"1433099",title:"[OM] Return Request - Provide reason-based evidence",assignee:"Eline",state:"Qualified",tags:["Order Mgmt","UX"],t:1,u:1,d:0,b:1,sp:5,parent:"970206"},
+            {id:"1433099",title:"[OM] Return Request - Provide reason-based evidence",assignee:"Harry",state:"Ready to build",tags:["Order Mgmt","UX"],t:1,u:1,d:0,b:1,sp:5,parent:"970206"},
             {id:"1437196",title:"[OM] Order Header - Ship-To Contact Retrieval for Ship-To Initiated Orders",assignee:"Aude",state:"Qualified",tags:["Order Mgmt"],t:1,u:0,d:0,b:1,sp:3,parent:"970114"},
             {id:"1488078",title:"[OM] Order Entry Point Validation - Restrict Order Initiation from Bill-To & Payer Accounts and Guide Users to Related Sold-To Accounts",assignee:"Cristina",state:"New",tags:["Order Mgmt","UX"],t:0,u:0,d:0,b:0,sp:0,parent:"1403752"},
             // Edouard Declercq
             {id:"1467244",title:"[eB2B] Authentication Failure Handling",assignee:"Edouard",state:"Qualified",tags:["eB2B","UX"],t:0,u:0,d:0,b:0,sp:2,parent:"1381366"},
-            {id:"1479376",title:"[eB2B] Global Role Definition Framework",assignee:"Edouard",state:"Qualified",tags:["Data","eB2B","UX"],t:1,u:1,d:0,b:1,sp:8,parent:""},
-            {id:"1480245",title:"[eB2B] ACR-Based Role Assignment",assignee:"Edouard",state:"Qualified",tags:["eB2B"],t:0,u:0,d:0,b:0,sp:8,parent:"1381401"},
-            {id:"1482592",title:"[eB2B] Contact-Level Role Visibility",assignee:"Edouard",state:"Qualified",tags:["eB2B","UX"],t:1,u:0,d:0,b:1,sp:3,parent:"1381401"},
+            {id:"1479376",title:"[eB2B] Global Role Definition Framework",assignee:"",state:"Qualified",tags:["Data","eB2B","UX"],t:1,u:1,d:0,b:1,sp:8,parent:""},
+            {id:"1480245",title:"[eB2B] ACR-Based Role Assignment",assignee:"",state:"Qualified",tags:["eB2B"],t:0,u:0,d:0,b:0,sp:8,parent:"1381401"},
+            {id:"1482592",title:"[eB2B] Contact-Level Role Visibility",assignee:"Justine",state:"Qualified",tags:["eB2B","UX"],t:1,u:0,d:0,b:1,sp:3,parent:"1381401"},
             {id:"1467226",title:"[eB2B] Federation ID Handling",assignee:"Edouard",state:"Qualified",tags:["eB2B"],t:0,u:0,d:0,b:0,sp:0,parent:"1381366"},
             // Julie Didier
             {id:"1466388",title:"[eB2B] Order Eligibility Rules",assignee:"Julie",state:"New",tags:["eB2B","UX"],t:0,u:0,d:0,b:0,sp:3,parent:"1381301"},
@@ -893,23 +904,23 @@
             {id:"1482971",title:"[OM][Tech] Materials - Synchronize Item Promotion Type Using Canonical Data Model 🚩",assignee:"Cristina",state:"Qualified",tags:["0.6 Dependent","eB2B","Order Mgmt"],t:0,u:0,d:0,b:0,sp:1,parent:"1016086"},
             {id:"1483098",title:"[OM][Change Request][Tech] Billing Document - Support Document Types for Free of Charge Orders (ZFOC / ZSFO) 🚩",assignee:"",state:"Ready to build",tags:["ChangeRequest","eB2B","Order Mgmt","R4.0.9 Candidate"],t:0,u:0,d:0,b:0,sp:13,parent:"970204"},
             // Riad El Mansour
-            {id:"1445510",title:"[eB2B] Account Navigation Bar",assignee:"Edouard",state:"Realized",tags:["eB2B","UX"],t:1,u:1,d:0,b:1,sp:3,parent:"1381402"},
+            {id:"1445510",title:"[eB2B] Account Navigation Bar",assignee:"Salma",state:"Ready for QA testing",tags:["eB2B","UX"],t:1,u:1,d:0,b:1,sp:3,parent:"1381402"},
             // Eline Josse
-            {id:"1433408",title:"[OM] Return Request - Provide Product traceability information (expiry date & batch number)",assignee:"Harry",state:"Ready to build",tags:["Order Mgmt","UX"],t:1,u:1,d:0,b:1,sp:2,parent:"970206"},
+            {id:"1433408",title:"[OM] Return Request - Provide Product traceability information (expiry date & batch number)",assignee:"Lhoucine",state:"In Progress",tags:["Order Mgmt","UX"],t:1,u:1,d:0,b:1,sp:2,parent:"970206"},
             {id:"1083635",title:"[OM][Enabler] Promotions Display (Static Capture)",assignee:"Eline",state:"New",tags:["eB2B","Enabler","NoQA","NoValidation","Order Mgmt"],t:0,u:0,d:0,b:0,sp:13,parent:"1089831"},
             {id:"1454728",title:"[OM][Enabler] Define R6 Automated Returns Capabilities",assignee:"Eline",state:"In Progress",tags:["eB2B","Enabler","NoQA","NoValidation","Order Mgmt"],t:0,u:0,d:0,b:0,sp:13,parent:"970206"},
             // Lhoucine Laghoui
             {id:"1372523",title:"[OM] OrderPad Product Catalog - Update Advanced Filter Attributes",assignee:"Cristina",state:"Qualified",tags:["FEX","Mockup","Order Mgmt","UX"],t:1,u:1,d:0,b:1,sp:5,parent:"970147"},
             // Justine Legere
-            {id:"1482596",title:"[eB2B] Sales Channel & Origin Consolidation",assignee:"Justine",state:"New",tags:["eB2B","UX"],t:0,u:0,d:0,b:0,sp:0,parent:"1381489"},
+
             // Unassigned
             {id:"1467229",title:"[eB2B] Login Page Support Access",assignee:"",state:"Ready to build",tags:["eB2B","UX"],t:1,u:1,d:0,b:1,sp:3,parent:"1381366"},
-            {id:"1466591",title:"[OM] Customer Eligibility Matrix - Revise Sold-To & Ship-To Validation",assignee:"",state:"Qualified",tags:["eB2B","Order Mgmt"],t:0,u:0,d:0,b:1,sp:1,parent:"1403752"},
+            {id:"1466591",title:"[OM] Customer Eligibility Matrix - Revise Sold-To & Ship-To Validation",assignee:"",state:"Qualified",tags:["eB2B","Order Mgmt"],t:1,u:0,d:0,b:1,sp:1,parent:"1403752"},
             {id:"1467182",title:"[eB2B] Visit Request",assignee:"",state:"Qualified",tags:["eB2B","FEX","UX"],t:0,u:0,d:0,b:0,sp:2,parent:"1381481"},
             {id:"1467185",title:"[eB2B] Visit Detail Page",assignee:"",state:"Qualified",tags:["eB2B","FEX","UX"],t:1,u:0,d:0,b:1,sp:2,parent:"1381481"},
             {id:"1467187",title:"[eB2B] Visit History",assignee:"",state:"Qualified",tags:["eB2B","FEX","UX"],t:0,u:0,d:0,b:0,sp:5,parent:"1381481"},
             {id:"1467196",title:"[eB2B] Homepage - Visits History Widget",assignee:"",state:"Qualified",tags:["eB2B","FEX","UX"],t:0,u:0,d:0,b:0,sp:5,parent:"1381411"},
-            {id:"1467199",title:"[eB2B] User List Management",assignee:"",state:"Qualified",tags:["eB2B","UX"],t:0,u:1,d:0,b:0,sp:8,parent:""},
+            {id:"1467199",title:"[eB2B] User List Management",assignee:"",state:"Qualified",tags:["eB2B","UX"],t:0,u:1,d:0,b:1,sp:8,parent:""},
             {id:"1467205",title:"[eB2B] Okta-Based Authentication Redirection",assignee:"",state:"Ready to build",tags:["eB2B"],t:1,u:0,d:0,b:1,sp:2,parent:"1381366"},
             {id:"1083626",title:"[OM] Translate Sandbox - Build the OM Translation Playbook & Localization Repository",assignee:"Cristina",state:"Ready to build",tags:["NoQA","NoValidation","Order Mgmt"],t:0,u:0,d:0,b:0,sp:5,parent:"970209"},
             {id:"1490342",title:"[OM][NFR] Salesforce Winter '27 - Execute Release 5 Non-Regression Testing",assignee:"",state:"Ready to build",tags:["NoQA","NoValidation","Order Mgmt"],t:0,u:0,d:0,b:0,sp:5,parent:"970209"},
@@ -917,9 +928,9 @@
             {id:"1369288",title:"[OM] Unified Order Cancellation (All Channels)",assignee:"",state:"Ready to build",tags:["Order Mgmt","SprintValidation"],t:1,u:0,d:0,b:1,sp:1,parent:"970201"},
             {id:"1381063",title:"[OM] Cancellation Email - Adaptive Cancellation Email Logic (User-Controlled & Multi-Origin)",assignee:"",state:"Ready to build",tags:["Order Mgmt","SprintValidation"],t:1,u:0,d:0,b:1,sp:2,parent:"970201"},
             {id:"1445512",title:"[eB2B] Account Data Display",assignee:"Riad",state:"In Progress",tags:["eB2B","UX"],t:1,u:1,d:0,b:1,sp:2,parent:"1381402"},
-            {id:"1445515",title:"[eB2B] Account Address List Display",assignee:"",state:"Qualified",tags:["eB2B","UX"],t:1,u:0,d:0,b:1,sp:3,parent:"1381402"},
+            {id:"1445515",title:"[eB2B] Account Address List Display",assignee:"",state:"Ready to build",tags:["eB2B","UX"],t:1,u:1,d:0,b:1,sp:3,parent:"1381402"},
             {id:"1445518",title:"[eB2B] Contact Account Manager Widget",assignee:"Riad",state:"Ready to build",tags:["eB2B","FEX","UX"],t:1,u:1,d:0,b:1,sp:2,parent:"1381402"},
-            {id:"1451753",title:"[eB2B] Update UI field mapping for Product Name on eB2B Product Card",assignee:"Mohammed-Mahmoud",state:"Ready to build",tags:["ChangeRequest","eB2B","UX"],t:1,u:1,d:0,b:1,sp:0,parent:"1381443"},
+            {id:"1451753",title:"[eB2B] Update UI field mapping for Product Name on eB2B Product Card",assignee:"Salma",state:"Ready for QA testing",tags:["ChangeRequest","eB2B","UX"],t:1,u:1,d:0,b:1,sp:0,parent:"1381443"},
             {id:"1443326",title:"[OM] Unified Order Cancellation (EDI Channel)",assignee:"",state:"Ready to build",tags:["Order Mgmt","SprintValidation"],t:1,u:0,d:0,b:1,sp:1,parent:"970201"},
             {id:"1443330",title:"[OM] Unified Return Requests (EDI Channel)",assignee:"",state:"Ready to build",tags:["Order Mgmt","SprintValidation"],t:1,u:0,d:0,b:1,sp:1,parent:"970206"},
             {id:"1443823",title:"[OM] Return Request - Enhance Return Eligibility Window by Return Reason",assignee:"Harry",state:"Ready to build",tags:["Order Mgmt","UX"],t:1,u:1,d:0,b:1,sp:3,parent:"970206"},
@@ -1207,7 +1218,8 @@
             const percent = parseFloat(progress);
             const progressClass = percent >= 70 ? '' : (percent >= 40 ? 'medium' : 'low');
             html += '<div class="progress-bar-label"><span>' + label + '</span><span>' + completed + '/' + total + ' (' + progress + '%)</span></div>';
-            html += '<div class="progress-bar"><div class="progress-fill ' + progressClass + '" style="width:' + progress + '%">' + progress + '%</div></div>';
+            const confettiAttr = percent === 100 ? ' data-confetti="1"' : '';
+            html += '<div class="progress-bar"' + confettiAttr + '><div class="progress-fill ' + progressClass + '" style="width:' + progress + '%">' + progress + '%</div></div>';
             html += '</div>';
             return html;
         };
@@ -1218,6 +1230,47 @@
         progressHTML += renderProgressBar('Solution Validation', solutionCompletedCount, solutionExpectedCount, solutionProgress);
 
         document.getElementById('validation-progress').innerHTML = progressHTML;
+
+        // Confetti burst on 100% bars
+        document.querySelectorAll('.progress-bar[data-confetti="1"]').forEach(bar => {
+            const canvas = document.createElement('canvas');
+            canvas.className = 'confetti-canvas';
+            canvas.width = bar.offsetWidth || 400;
+            canvas.height = bar.offsetHeight || 24;
+            bar.appendChild(canvas);
+            const ctx = canvas.getContext('2d');
+            const COLORS = ['#e63946','#f4a261','#2a9d8f','#457b9d','#f1c40f','#c77dff','#ff6b6b','#06d6a0'];
+            const particles = Array.from({length: 60}, () => ({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height * 0.5,
+                vx: (Math.random() - 0.5) * 3,
+                vy: Math.random() * 1.5 + 0.5,
+                size: Math.random() * 5 + 3,
+                color: COLORS[Math.floor(Math.random() * COLORS.length)],
+                rot: Math.random() * Math.PI * 2,
+                vrot: (Math.random() - 0.5) * 0.2,
+                alpha: 1
+            }));
+            let frame = 0;
+            const animate = () => {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                particles.forEach(p => {
+                    p.x += p.vx; p.y += p.vy; p.rot += p.vrot; p.alpha -= 0.012;
+                    if (p.alpha <= 0) return;
+                    ctx.save();
+                    ctx.globalAlpha = Math.max(0, p.alpha);
+                    ctx.translate(p.x, p.y);
+                    ctx.rotate(p.rot);
+                    ctx.fillStyle = p.color;
+                    ctx.fillRect(-p.size / 2, -p.size / 4, p.size, p.size / 2);
+                    ctx.restore();
+                });
+                frame++;
+                if (frame < 120) requestAnimationFrame(animate);
+                else ctx.clearRect(0, 0, canvas.width, canvas.height);
+            };
+            requestAnimationFrame(animate);
+        });
 
         // Render Heatmap
         const getStatusClass = (status) => {
