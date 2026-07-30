@@ -1385,7 +1385,7 @@
             heatmapHTML += '<td class="' + getStatusClass(story.dataStatus) + '">' + story.dataStatus + '</td>';
             heatmapHTML += '<td class="' + getStatusClass(story.businessStatus) + '">' + story.businessStatus + '</td>';
             heatmapHTML += '<td class="' + getStatusClass(story.solutionStatus) + '">' + story.solutionStatus + '</td>';
-            heatmapHTML += '<td><span class="readiness-' + (story.readiness === 'Ready' ? 'ready' : 'not-ready') + '">' + (story.readiness === 'Ready' ? '🎉 Ready' : 'Not Ready') + '</span></td>';
+            heatmapHTML += '<td><span class="readiness-' + (story.readiness === 'Ready' ? 'ready' : 'not-ready') + '">' + story.readiness + '</span></td>';
             heatmapHTML += '</tr>';
         });
 
