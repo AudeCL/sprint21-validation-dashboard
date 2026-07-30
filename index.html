@@ -470,6 +470,13 @@
         .story-title {
             max-width: 400px;
         }
+        .story-parent {
+            max-width: 120px;
+            min-width: 80px;
+            font-size: 0.82em;
+            color: var(--rc-gray);
+            white-space: normal;
+        }
 
         .status-completed {
             color: #1e7e40;
@@ -480,7 +487,7 @@
             font-weight: 600;
         }
         .status-na {
-            color: var(--rc-muted);
+            color: #bbb;
         }
         .status-offline {
             color: #17a2b8;
@@ -728,7 +735,7 @@
             </div>
         </div>
         <div class="data-refresh-notice">
-            <strong>ℹ️ Data Refresh:</strong> ADO data last extracted on <strong>July 29, 2026 at 7:29 PM CEST</strong>.
+            <strong>ℹ️ Data Refresh:</strong> ADO data last extracted on <strong>July 30, 2026 at 8:18 AM CEST</strong>.
             Validations completed in ADO after this time may not be reflected yet. Dashboard will be refreshed periodically.
         </div>
     </div>
@@ -890,15 +897,15 @@
             {id:"1454200",title:"[OM] Return Request - Restrict available Return Reasons for B2B Customers",assignee:"",state:"Ready to build",tags:["eB2B","Order Mgmt"],t:1,u:0,d:0,b:1,sp:2,parent:"970206"},
             // Aude Claquesin
             {id:"1468710",title:"[OM][Tech] Product - Enhance ZREP vs. Copack Item Type Classification",assignee:"Aude",state:"New",tags:["0.6 Dependent","Data","eB2B","Order Mgmt"],t:0,u:0,d:0,b:0,sp:1,parent:"1016086"},
-            {id:"1493201",title:"[OM][Change Request] Order Confirmation Email - Add Disclaimer on Retained Delivery Mode Validation",assignee:"Noémie",state:"New",tags:["ChangeRequest","eB2B","Order Mgmt"],t:0,u:0,d:0,b:0,sp:0,parent:""},
+            {id:"1493201",title:"[OM][Change Request] Order Confirmation Email - Add Disclaimer on Retained Delivery Mode Validation",assignee:"Noémie",state:"New",tags:["ChangeRequest","eB2B","Mockup","Order Mgmt","UX"],t:0,u:0,d:0,b:0,sp:0,parent:"970196"},
             {id:"1433099",title:"[OM] Return Request - Provide reason-based evidence",assignee:"Harry",state:"Ready to build",tags:["Order Mgmt","UX"],t:1,u:1,d:0,b:1,sp:5,parent:"970206"},
             {id:"1437196",title:"[OM] Order Header - Ship-To Contact Retrieval for Ship-To Initiated Orders",assignee:"Aude",state:"Qualified",tags:["Order Mgmt"],t:1,u:0,d:0,b:1,sp:3,parent:"970114"},
             {id:"1488078",title:"[OM] Order Entry Point Validation - Restrict Order Initiation from Bill-To & Payer Accounts and Guide Users to Related Sold-To Accounts",assignee:"Noémie",state:"Qualified",tags:["Mockup","Order Mgmt","UX"],t:0,u:0,d:0,b:0,sp:0,parent:"1403752"},
             // Edouard Declercq
             {id:"1467244",title:"[eB2B] Authentication Failure Handling",assignee:"",state:"Qualified",tags:["eB2B","UX"],t:0,u:1,d:0,b:0,sp:2,parent:"1381366"},
             {id:"1479376",title:"[eB2B] Global Role Definition Framework",assignee:"",state:"Qualified",tags:["Data","eB2B","UX"],t:1,u:1,d:0,b:1,sp:8,parent:""},
-            {id:"1480245",title:"[eB2B] ACR-Based Role Assignment",assignee:"",state:"Qualified",tags:["eB2B"],t:1,u:0,d:0,b:1,sp:8,parent:"1381401"},
-            {id:"1482592",title:"[eB2B] Contact-Level Role Visibility",assignee:"",state:"Qualified",tags:["eB2B","UX"],t:1,u:1,d:0,b:1,sp:3,parent:"1381401"},
+            {id:"1480245",title:"[eB2B] ACR-Based Role Assignment",assignee:"",state:"Ready to build",tags:["eB2B"],t:1,u:0,d:0,b:1,sp:8,parent:"1381401"},
+            {id:"1482592",title:"[eB2B] Contact-Level Role Visibility",assignee:"",state:"Ready to build",tags:["eB2B","UX"],t:1,u:1,d:0,b:1,sp:3,parent:"1381401"},
             {id:"1467226",title:"[eB2B] Federation ID Handling",assignee:"",state:"Qualified",tags:["eB2B"],t:0,u:0,d:0,b:0,sp:0,parent:"1381366"},
             // Julie Didier
             {id:"1466388",title:"[eB2B] Order Eligibility Rules",assignee:"Julie",state:"Qualified",tags:["eB2B","UX"],t:0,u:0,d:0,b:0,sp:3,parent:"1381301"},
@@ -967,18 +974,18 @@
             "970209": "Product Management & Display",
             "1089831": "Promotions Management",
             "1016086": "Product Content & Akeneo Integration",
-            "1381402": "eB2B Account Experience",
-            "1381366": "eB2B Authentication & Access",
-            "1381301": "eB2B Ordering",
-            "1381481": "eB2B Visit Management",
-            "1381476": "eB2B Order Cancellation",
-            "1381411": "eB2B Homepage & Dashboard",
-            "1381392": "eB2B User Management",
-            "1381397": "eB2B Data Bridging",
-            "1381401": "eB2B Roles & Permissions",
-            "1381489": "eB2B Data Standardization",
-            "1381443": "eB2B Product Catalog",
-            "1381468": "eB2B Checkout"
+            "1381402": "Account Experience",
+            "1381366": "Authentication & Access",
+            "1381301": "Ordering",
+            "1381481": "Visit Management",
+            "1381476": "Order Cancellation",
+            "1381411": "Homepage & Dashboard",
+            "1381392": "User Management",
+            "1381397": "Data Bridging",
+            "1381401": "Roles & Permissions",
+            "1381489": "Data Standardization",
+            "1381443": "Product Catalog",
+            "1381468": "Checkout"
         };
 
         // Workstream membership is derived from the title markers [OM] / [eB2B].
@@ -1282,24 +1289,56 @@
             return "status-na";
         };
 
+        const getNBA = (story) => {
+            // No validation expected at all → nothing to do
+            if (!story.uxExpected && !story.dataExpected && !story.businessExpected && !story.solutionExpected) {
+                return { text: 'None', style: 'color:#bbb;' };
+            }
+            // Solution not yet stable → assignee must act
+            if (story.solutioningStatus === 'Being Worked On' || story.solutioningStatus === 'Being Finalised') {
+                const name = story.assignee || 'Unassigned';
+                return { text: name, style: 'color:#1a1a1a;' };
+            }
+            // Finalised → check which validations are still pending
+            const pending = [];
+            if (story.uxExpected && !story.uxStatus.includes('Completed')) pending.push('UX');
+            if (story.dataExpected && !story.dataStatus.includes('Completed')) pending.push('Data');
+            if (story.businessExpected && !story.businessStatus.includes('Completed')) pending.push('Business');
+            if (story.solutionExpected && !story.solutionStatus.includes('Completed')) pending.push('Solution');
+            if (pending.length === 0) {
+                return { text: 'None', style: 'color:#bbb;' };
+            }
+            return { text: 'Validator(s)', style: 'color:#1a1a1a;' };
+        };
+
         let heatmapHTML = '<thead><tr>';
         heatmapHTML += '<th class="sortable" onclick="sortHeatmap(0)">Story ID</th>';
-        heatmapHTML += '<th class="sortable" onclick="sortHeatmap(1)">Title</th>';
-        heatmapHTML += '<th class="sortable" onclick="sortHeatmap(2)">Solutioning Status</th>';
-        heatmapHTML += '<th class="sortable" onclick="sortHeatmap(3)">UX</th>';
-        heatmapHTML += '<th class="sortable" onclick="sortHeatmap(4)">Data</th>';
-        heatmapHTML += '<th class="sortable" onclick="sortHeatmap(5)">Business</th>';
-        heatmapHTML += '<th class="sortable" onclick="sortHeatmap(6)">Solution</th>';
-        heatmapHTML += '<th class="sortable" onclick="sortHeatmap(7)">Overall</th>';
+        heatmapHTML += '<th class="sortable" onclick="sortHeatmap(1)">Parent</th>';
+        heatmapHTML += '<th class="sortable" onclick="sortHeatmap(2)">Title</th>';
+        heatmapHTML += '<th class="sortable" onclick="sortHeatmap(3)">Solutioning Status</th>';
+        heatmapHTML += '<th class="sortable" onclick="sortHeatmap(4)">NBA Owner</th>';
+        heatmapHTML += '<th class="sortable" onclick="sortHeatmap(5)">UX</th>';
+        heatmapHTML += '<th class="sortable" onclick="sortHeatmap(6)">Data</th>';
+        heatmapHTML += '<th class="sortable" onclick="sortHeatmap(7)">Business</th>';
+        heatmapHTML += '<th class="sortable" onclick="sortHeatmap(8)">Solution</th>';
+        heatmapHTML += '<th class="sortable" onclick="sortHeatmap(9)">Overall</th>';
         heatmapHTML += '</tr></thead><tbody id="heatmap-tbody">';
 
         viewStories.filter(story => !story.isEnabler && !story.isChangeRequest).forEach(story => {
             const adoUrl = 'https://dev.azure.com/MarsDevTeam/EOS/_workitems/edit/' + story.id;
+            const nba = getNBA(story);
             heatmapHTML += '<tr>';
             heatmapHTML += '<td class="story-id"><a href="' + adoUrl + '" target="_blank">' + story.id + '</a></td>';
+            if (story.parent && story.parentName) {
+                const parentUrl = 'https://dev.azure.com/MarsDevTeam/EOS/_workitems/edit/' + story.parent;
+                heatmapHTML += '<td class="story-parent"><a href="' + parentUrl + '" target="_blank" style="color:var(--rc-gray); text-decoration:none;" title="Parent ID: ' + story.parent + '">' + story.parentName + '</a></td>';
+            } else {
+                heatmapHTML += '<td class="story-parent" style="color:#999;">-</td>';
+            }
             heatmapHTML += '<td class="story-title">' + story.title + '</td>';
             const sol = solutioningDisplay(story.solutioningStatus);
             heatmapHTML += '<td style="color:#1a1a1a;">' + sol.emoji + ' ' + sol.label + '</td>';
+            heatmapHTML += '<td style="' + nba.style + '">' + nba.text + '</td>';
             heatmapHTML += '<td class="' + getStatusClass(story.uxStatus) + '">' + story.uxStatus + '</td>';
             heatmapHTML += '<td class="' + getStatusClass(story.dataStatus) + '">' + story.dataStatus + '</td>';
             heatmapHTML += '<td class="' + getStatusClass(story.businessStatus) + '">' + story.businessStatus + '</td>';
@@ -1375,11 +1414,11 @@
         // Render Change Requests Table
         const changeRequestStories = viewStories.filter(story => story.isChangeRequest);
         let crHTML = '<thead><tr>';
-        crHTML += '<th>Story ID</th><th>Parent</th><th>Title</th><th>Solutioning Status</th><th>UX</th><th>Data</th><th>Business</th><th>Solution</th><th>Overall</th>';
+        crHTML += '<th>Story ID</th><th>Parent</th><th>Title</th><th>Solutioning Status</th><th>NBA Owner</th><th>UX</th><th>Data</th><th>Business</th><th>Solution</th><th>Overall</th>';
         crHTML += '</tr></thead><tbody>';
 
         if (changeRequestStories.length === 0) {
-            crHTML += '<tr><td colspan="9" style="text-align:center; color:#999;">No change requests in this sprint.</td></tr>';
+            crHTML += '<tr><td colspan="10" style="text-align:center; color:#999;">No change requests in this sprint.</td></tr>';
         } else {
             changeRequestStories.forEach(story => {
                 const adoUrl = 'https://dev.azure.com/MarsDevTeam/EOS/_workitems/edit/' + story.id;
@@ -1387,13 +1426,15 @@
                 crHTML += '<tr>';
                 crHTML += '<td class="story-id"><a href="' + adoUrl + '" target="_blank">' + story.id + '</a></td>';
                 if (story.parent && story.parentName) {
-                    crHTML += '<td><a href="' + parentUrl + '" target="_blank" style="color: var(--rc-gray); text-decoration: none;" title="Parent ID: ' + story.parent + '">' + story.parentName + '</a></td>';
+                    crHTML += '<td class="story-parent"><a href="' + parentUrl + '" target="_blank" style="color: var(--rc-gray); text-decoration: none;" title="Parent ID: ' + story.parent + '">' + story.parentName + '</a></td>';
                 } else {
                     crHTML += '<td style="color: #999;">-</td>';
                 }
                 crHTML += '<td class="story-title">' + story.title + '</td>';
                 const crSol = solutioningDisplay(story.solutioningStatus);
                 crHTML += '<td style="color:#1a1a1a;">' + crSol.emoji + ' ' + crSol.label + '</td>';
+                const crNba = getNBA(story);
+                crHTML += '<td style="' + crNba.style + '">' + crNba.text + '</td>';
                 crHTML += '<td class="' + getStatusClass(story.uxStatus) + '">' + story.uxStatus + '</td>';
                 crHTML += '<td class="' + getStatusClass(story.dataStatus) + '">' + story.dataStatus + '</td>';
                 crHTML += '<td class="' + getStatusClass(story.businessStatus) + '">' + story.businessStatus + '</td>';
