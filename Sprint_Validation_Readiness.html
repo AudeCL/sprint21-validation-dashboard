@@ -1260,11 +1260,10 @@
             const H = 200;
             canvas.width = W;
             canvas.height = H;
-            // Position canvas so it floats above the bar
-            canvas.style.top = (-H + bar.offsetHeight) + 'px';
-            bar.style.position = 'relative';
-            bar.style.overflow = 'visible';
-            bar.appendChild(canvas);
+            // Attach canvas to the container (not the bar) so bar keeps overflow:hidden for rounding
+            const container = bar.parentElement;
+            canvas.style.top = (bar.offsetTop - H + bar.offsetHeight) + 'px';
+            container.appendChild(canvas);
             const ctx = canvas.getContext('2d');
             const COLORS = ['#e63946','#f4a261','#2a9d8f','#457b9d','#f1c40f','#c77dff','#ff6b6b','#06d6a0','#ff9f1c','#cbf3f0'];
             // Burst from multiple origin points along the bar
