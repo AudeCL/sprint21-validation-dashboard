@@ -532,6 +532,7 @@
 
         .progress-bar-container {
             margin-bottom: 20px;
+            overflow: visible;
         }
         .progress-bar-label {
             display: flex;
@@ -558,22 +559,31 @@
             font-size: 0.8em;
             transition: width 1s ease;
         }
-        .progress-bar-container {
-            position: relative;
-        }
         .confetti-canvas {
             position: absolute;
             top: 0; left: 0;
-            width: 100%; height: 100%;
+            width: 100%;
+            height: 200px;
             pointer-events: none;
-            border-radius: 12px;
-            overflow: hidden;
+            z-index: 10;
+        }
+        .progress-bar-container {
+            overflow: visible;
         }
         .progress-fill.low {
             background: var(--rc-red);
         }
         .progress-fill.medium {
             background: #e0b400;
+        }
+        .progress-fill.complete {
+            background: linear-gradient(90deg, #0c5c24 0%, #34d162 40%, #0c5c24 100%);
+            background-size: 200% 100%;
+            animation: progress-shimmer 2.5s ease-in-out infinite;
+        }
+        @keyframes progress-shimmer {
+            0%   { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
         }
 
         .donut-chart {
@@ -1217,7 +1227,7 @@
         let progressHTML = '';
 
         const renderProgressBar = (label, completed, total, progress) => {
-            let html = '<div class="progress-bar-container">';
+            let html = '<div class="progress-bar-container" style="position:relative;">';
             if (total === 0) {
                 html += '<div class="progress-bar-label"><span>' + label + '</span></div>';
                 html += '<div class="progress-bar" style="display:flex; align-items:center; justify-content:center;"><span style="color:#6c757d; font-size:0.85em; font-style:italic;">No validation expected</span></div>';
@@ -1225,9 +1235,11 @@
                 return html;
             }
             const percent = parseFloat(progress);
-            const progressClass = percent >= 70 ? '' : (percent >= 40 ? 'medium' : 'low');
-            html += '<div class="progress-bar-label"><span>' + label + '</span><span>' + completed + '/' + total + ' (' + progress + '%)</span></div>';
-            const confettiAttr = percent === 100 ? ' data-confetti="1"' : '';
+            const isComplete = percent === 100;
+            const progressClass = isComplete ? 'complete' : (percent >= 70 ? '' : (percent >= 40 ? 'medium' : 'low'));
+            const displayLabel = isComplete ? label + ' 🎉' : label;
+            html += '<div class="progress-bar-label"><span>' + displayLabel + '</span><span>' + completed + '/' + total + ' (' + progress + '%)</span></div>';
+            const confettiAttr = isComplete ? ' data-confetti="1"' : '';
             html += '<div class="progress-bar"' + confettiAttr + '><div class="progress-fill ' + progressClass + '" style="width:' + progress + '%">' + progress + '%</div></div>';
             html += '</div>';
             return html;
@@ -1244,39 +1256,70 @@
         document.querySelectorAll('.progress-bar[data-confetti="1"]').forEach(bar => {
             const canvas = document.createElement('canvas');
             canvas.className = 'confetti-canvas';
-            canvas.width = bar.offsetWidth || 400;
-            canvas.height = bar.offsetHeight || 24;
+            const W = bar.offsetWidth || 500;
+            const H = 200;
+            canvas.width = W;
+            canvas.height = H;
+            // Position canvas so it floats above the bar
+            canvas.style.top = (-H + bar.offsetHeight) + 'px';
+            bar.style.position = 'relative';
+            bar.style.overflow = 'visible';
             bar.appendChild(canvas);
             const ctx = canvas.getContext('2d');
-            const COLORS = ['#e63946','#f4a261','#2a9d8f','#457b9d','#f1c40f','#c77dff','#ff6b6b','#06d6a0'];
-            const particles = Array.from({length: 60}, () => ({
-                x: Math.random() * canvas.width,
-                y: Math.random() * canvas.height * 0.5,
-                vx: (Math.random() - 0.5) * 3,
-                vy: Math.random() * 1.5 + 0.5,
-                size: Math.random() * 5 + 3,
-                color: COLORS[Math.floor(Math.random() * COLORS.length)],
-                rot: Math.random() * Math.PI * 2,
-                vrot: (Math.random() - 0.5) * 0.2,
-                alpha: 1
-            }));
+            const COLORS = ['#e63946','#f4a261','#2a9d8f','#457b9d','#f1c40f','#c77dff','#ff6b6b','#06d6a0','#ff9f1c','#cbf3f0'];
+            // Burst from multiple origin points along the bar
+            const origins = [0.2, 0.5, 0.8].map(f => f * W);
+            const particles = [];
+            origins.forEach(ox => {
+                for (let i = 0; i < 50; i++) {
+                    const angle = -Math.PI / 2 + (Math.random() - 0.5) * Math.PI * 1.1;
+                    const speed = Math.random() * 7 + 3;
+                    particles.push({
+                        x: ox + (Math.random() - 0.5) * 30,
+                        y: H,
+                        vx: Math.cos(angle) * speed,
+                        vy: Math.sin(angle) * speed,
+                        gravity: 0.15 + Math.random() * 0.1,
+                        size: Math.random() * 7 + 3,
+                        color: COLORS[Math.floor(Math.random() * COLORS.length)],
+                        rot: Math.random() * Math.PI * 2,
+                        vrot: (Math.random() - 0.5) * 0.25,
+                        alpha: 1,
+                        shape: Math.random() < 0.5 ? 'rect' : 'circle'
+                    });
+                }
+            });
+            const TOTAL_FRAMES = 300;
             let frame = 0;
             const animate = () => {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.clearRect(0, 0, W, H);
                 particles.forEach(p => {
-                    p.x += p.vx; p.y += p.vy; p.rot += p.vrot; p.alpha -= 0.012;
-                    if (p.alpha <= 0) return;
+                    p.vy += p.gravity;
+                    p.x += p.vx;
+                    p.y += p.vy;
+                    p.rot += p.vrot;
+                    // Fade in last third of animation
+                    if (frame > TOTAL_FRAMES * 0.67) {
+                        p.alpha -= 1 / (TOTAL_FRAMES * 0.33);
+                    }
+                    if (p.alpha <= 0 || p.y > H) return;
                     ctx.save();
                     ctx.globalAlpha = Math.max(0, p.alpha);
                     ctx.translate(p.x, p.y);
                     ctx.rotate(p.rot);
                     ctx.fillStyle = p.color;
-                    ctx.fillRect(-p.size / 2, -p.size / 4, p.size, p.size / 2);
+                    if (p.shape === 'circle') {
+                        ctx.beginPath();
+                        ctx.arc(0, 0, p.size / 2, 0, Math.PI * 2);
+                        ctx.fill();
+                    } else {
+                        ctx.fillRect(-p.size / 2, -p.size / 4, p.size, p.size / 2);
+                    }
                     ctx.restore();
                 });
                 frame++;
-                if (frame < 120) requestAnimationFrame(animate);
-                else ctx.clearRect(0, 0, canvas.width, canvas.height);
+                if (frame < TOTAL_FRAMES) requestAnimationFrame(animate);
+                else ctx.clearRect(0, 0, W, H);
             };
             requestAnimationFrame(animate);
         });
@@ -1343,7 +1386,7 @@
             heatmapHTML += '<td class="' + getStatusClass(story.dataStatus) + '">' + story.dataStatus + '</td>';
             heatmapHTML += '<td class="' + getStatusClass(story.businessStatus) + '">' + story.businessStatus + '</td>';
             heatmapHTML += '<td class="' + getStatusClass(story.solutionStatus) + '">' + story.solutionStatus + '</td>';
-            heatmapHTML += '<td><span class="readiness-' + (story.readiness === 'Ready' ? 'ready' : 'not-ready') + '">' + story.readiness + '</span></td>';
+            heatmapHTML += '<td><span class="readiness-' + (story.readiness === 'Ready' ? 'ready' : 'not-ready') + '">' + (story.readiness === 'Ready' ? '🎉 Ready' : 'Not Ready') + '</span></td>';
             heatmapHTML += '</tr>';
         });
 
@@ -1377,7 +1420,7 @@
             detailedHTML += '<td class="' + getStatusClass(story.dataStatus) + '">' + story.dataStatus + '</td>';
             detailedHTML += '<td class="' + getStatusClass(story.businessStatus) + '">' + story.businessStatus + '</td>';
             detailedHTML += '<td class="' + getStatusClass(story.solutionStatus) + '">' + story.solutionStatus + '</td>';
-            detailedHTML += '<td><span class="readiness-' + (story.readiness === 'Ready' ? 'ready' : 'not-ready') + '">' + story.readiness + '</span></td>';
+            detailedHTML += '<td><span class="readiness-' + (story.readiness === 'Ready' ? 'ready' : 'not-ready') + '">' + (story.readiness === 'Ready' ? '🎉 Ready' : 'Not Ready') + '</span></td>';
             detailedHTML += '</tr>';
         });
 
@@ -1439,7 +1482,7 @@
                 crHTML += '<td class="' + getStatusClass(story.dataStatus) + '">' + story.dataStatus + '</td>';
                 crHTML += '<td class="' + getStatusClass(story.businessStatus) + '">' + story.businessStatus + '</td>';
                 crHTML += '<td class="' + getStatusClass(story.solutionStatus) + '">' + story.solutionStatus + '</td>';
-                crHTML += '<td><span class="readiness-' + (story.readiness === 'Ready' ? 'ready' : 'not-ready') + '">' + story.readiness + '</span></td>';
+                crHTML += '<td><span class="readiness-' + (story.readiness === 'Ready' ? 'ready' : 'not-ready') + '">' + (story.readiness === 'Ready' ? '🎉 Ready' : 'Not Ready') + '</span></td>';
                 crHTML += '</tr>';
             });
         }
