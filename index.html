@@ -785,11 +785,11 @@
                 <h4>How to read this table</h4>
                 <p>The <strong>Solutioning Status</strong> indicates the maturity of each User Story and whether it is ready for stakeholder review. It is automatically derived from the ADO <em>State</em> and <em>Assigned To</em> fields.</p>
                 <div class="legend-item-row">
-                    <span class="legend-status"><span style="color:#9e9e9e;">●</span> Not Started</span>
+                    <span class="legend-status">⚪ Not Started</span>
                     <span class="legend-desc">The User Story has not yet been picked up by the Salesforce team. No validation can be requested at this stage.<br><em style="color:#6c757d;">🔍 In ADO: State = <strong>New</strong>, any assignee.</em></span>
                 </div>
                 <div class="legend-item-row">
-                    <span class="legend-status"><span style="color:#fd7e14;">●</span> In Progress</span>
+                    <span class="legend-status">🟠 In Progress</span>
                     <span class="legend-desc">The Salesforce team is actively designing the User Story. If validation is required, the item is not yet ready for review. Validation will be requested once the solution reaches a more stable state.<br><em style="color:#6c757d;">🔍 In ADO: State = <strong>In Design</strong>, any assignee.</em></span>
                 </div>
                 <div class="legend-item-row">
@@ -1109,8 +1109,8 @@
         const solutioningDisplay = (s) => {
             if (s === "Finalised") return { label: "Finalised", emoji: "🟢" };
             if (s === "Being Finalised") return { label: "Under Finalisation", emoji: "🟡" };
-            if (s === "Being Worked On") return { label: "In Progress", emoji: '<span style="color:#fd7e14;">●</span>' };
-            return { label: "Not Started", emoji: "<span style="color:#9e9e9e;">●</span>" };
+            if (s === "Being Worked On") return { label: "In Progress", emoji: '🟠' };
+            return { label: "Not Started", emoji: "⚪" };
         };
 
         // Current workstream view: 'ALL' (OM + eB2B), 'OM', or 'eB2B'
@@ -1165,8 +1165,8 @@
         const featureBreakdown = [
             { label: 'Solutioning finalised', count: featureSolFinalised, color: '#28a745', emoji: '🟢' },
             { label: 'Solutioning being finalised', count: featureSolFinalising, color: '#ffc107', emoji: '🟡' },
-            { label: 'Solutioning in progress', count: featureSolWorkedOn, color: '#fd7e14', emoji: '<span style="color:#fd7e14;">●</span>' },
-            { label: 'Solutioning not started', count: featureSolNotStarted, color: '#6c757d', emoji: '<span style="color:#9e9e9e;">●</span>' }
+            { label: 'Solutioning in progress', count: featureSolWorkedOn, color: '#fd7e14', emoji: '🟠' },
+            { label: 'Solutioning not started', count: featureSolNotStarted, color: '#6c757d', emoji: '⚪' }
         ];
 
         const composition = [
