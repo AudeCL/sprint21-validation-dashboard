@@ -745,7 +745,7 @@
             </div>
         </div>
         <div class="data-refresh-notice">
-            <strong>ℹ️ Data Refresh:</strong> ADO data last extracted on <strong>July 31, 2026 at 6:43 PM CEST</strong>.
+            <strong>ℹ️ Data Refresh:</strong> ADO data last extracted on <strong>August 3, 2026 at 8:55 AM CEST</strong>.
             Validations completed in ADO after this time may not be reflected yet. Dashboard will be refreshed periodically.
         </div>
     </div>
@@ -1107,10 +1107,10 @@
 
         // Map internal solutioning status to display label + criticality emoji
         const solutioningDisplay = (s) => {
-            if (s === "Finalised") return { label: "Finalised", emoji: "🟢" };
-            if (s === "Being Finalised") return { label: "Under Finalisation", emoji: "🟡" };
-            if (s === "Being Worked On") return { label: "In Progress", emoji: '🟠' };
-            return { label: "Not Started", emoji: "⚪" };
+            if (s === "Finalised") return { label: "Finalised", emoji: "🟢", color: "#28a745" };
+            if (s === "Being Finalised") return { label: "Under Finalisation", emoji: "🟡", color: "#ffc107" };
+            if (s === "Being Worked On") return { label: "In Progress", emoji: '🟠', color: "#fd7e14" };
+            return { label: "Not Started", emoji: "⚪", color: "#6c757d" };
         };
 
         // Current workstream view: 'ALL' (OM + eB2B), 'OM', or 'eB2B'
@@ -1397,7 +1397,7 @@
             }
             heatmapHTML += '<td class="story-title">' + story.title + '</td>';
             const sol = solutioningDisplay(story.solutioningStatus);
-            heatmapHTML += '<td style="color:#1a1a1a;">' + sol.emoji + ' ' + sol.label + '</td>';
+            heatmapHTML += '<td><span style="display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:999px;background:' + sol.color + '18;border:1px solid ' + sol.color + '55;font-size:0.8em;white-space:nowrap;">' + sol.emoji + ' <span style="color:' + sol.color + ';font-weight:600;">' + sol.label + '</span></span></td>';
             heatmapHTML += '<td style="' + nba.style + '">' + nba.text + '</td>';
             heatmapHTML += '<td class="' + getStatusClass(story.uxStatus) + '">' + story.uxStatus + '</td>';
             heatmapHTML += '<td class="' + getStatusClass(story.dataStatus) + '">' + story.dataStatus + '</td>';
