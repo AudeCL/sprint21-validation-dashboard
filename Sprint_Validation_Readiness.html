@@ -745,7 +745,7 @@
             </div>
         </div>
         <div class="data-refresh-notice">
-            <strong>ℹ️ Data Refresh:</strong> ADO data last extracted on <strong>August 13, 2026 at 9:53 AM CEST</strong>.
+            <strong>ℹ️ Data Refresh:</strong> ADO data last extracted on <strong>August 17, 2026 at 10:39 AM CEST</strong>.
             Validations completed in ADO after this time may not be reflected yet. Dashboard will be refreshed periodically.
         </div>
     </div>
@@ -905,73 +905,61 @@
         // validation flags (t/u/d/b = Technical/UX/Data/Business, 1 = completed in ADO),
         // story points & parent.
         const rawItems = [
-            // Harry Bellod
-            {id:"1272637",title:"[OM][Tech] Fetch Account Receivable Data (Customer Balance Details) 🚩",assignee:"Aude",state:"In Design",tags:["Enabler","NoQA","NoValidation","Order Mgmt"],ux_ui:0,data_rel:0,t:0,u:0,d:0,b:0,sp:13,parent:"970114"},
-            {id:"1379744",title:"[OM] AI-powered Order Management - Cancel Order through Agent conversation",assignee:"Harry",state:"Ready to build",tags:["NoValidation","Order Mgmt"],ux_ui:0,data_rel:0,t:0,u:0,d:0,b:0,sp:8,parent:"970201"},
+            {id:"1468710",title:"[OM][TECH] Product - Enhance ZREP vs. Copack Item Type Classification",assignee:"Luke",state:"Design Review",tags:["0.6 Dependent","eB2B","Order Mgmt"],ux_ui:0,data_rel:1,t:1,u:0,d:0,b:0,sp:1,parent:"1016086"},
+            {id:"1272637",title:"[OM][Tech] Fetch Account Receivable Data (Customer Balance Details) 🚩",assignee:"Harry",state:"Design Review",tags:["NoQA","Order Mgmt"],ux_ui:0,data_rel:0,t:0,u:0,d:0,b:0,sp:5,parent:"970114"},
             {id:"1372523",title:"[OM] OrderPad Product Catalog - Update Advanced Filter Attributes",assignee:"Harry",state:"Build Done",tags:["FEX","Mockup","Order Mgmt"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:5,parent:"970147"},
-            // Aude Claquesin
+            {id:"1379744",title:"[OM] AI-powered Order Management - Cancel Order through Agent conversation",assignee:"Harry",state:"Ready to build",tags:["NoValidation","Order Mgmt"],ux_ui:0,data_rel:0,t:0,u:0,d:0,b:0,sp:8,parent:"970201"},
             {id:"1083635",title:"[OM][Enabler] Promotions Display (Static Capture)",assignee:"Aude",state:"In Progress",tags:["eB2B","Enabler","NoQA","NoValidation","Order Mgmt"],ux_ui:0,data_rel:0,t:0,u:0,d:0,b:0,sp:13,parent:"1089831"},
-            {id:"1437196",title:"[OM] Order Header - Ship-To Contact Retrieval for Ship-To Initiated Orders",assignee:"",state:"Ready to build",tags:["Order Mgmt"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:1,sp:3,parent:"970114"},
-            {id:"1468710",title:"[OM][TECH] Product - Enhance ZREP vs. Copack Item Type Classification",assignee:"",state:"Design Review",tags:["0.6 Dependent","eB2B","Order Mgmt"],ux_ui:0,data_rel:1,t:1,u:0,d:0,b:0,sp:1,parent:"1016086"},
-            {id:"1498238",title:"[OM][TECH] Return Order Interface - Support Storefront Return Request Mapping 🚩",assignee:"",state:"Ready to build",tags:["NoQA","Order Mgmt"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:0,sp:2,parent:"970206"},
-            // Edouard Declercq
-            {id:"1496230",title:"[eB2B][Tech] Automatically create ACR on the SoldTo",assignee:"Edouard",state:"In Design",tags:["eB2B","NoQA","NoValidation"],ux_ui:0,data_rel:0,t:0,u:0,d:0,b:0,sp:5,parent:"1381401"},
-            {id:"1503113",title:"[eB2B] [Change Request] Order Eligibility Rules - Restrict Ordering for Payer and BillTo",assignee:"Julie",state:"Design Review",tags:["ChangeRequest","eB2B","UX"],ux_ui:1,data_rel:0,t:0,u:0,d:0,b:0,sp:2,parent:"1381397"},
-            // Julie Didier
+            {id:"1496230",title:"[eB2B][Tech] Automatically create ACR on the SoldTo (and shipTos)",assignee:"Edouard",state:"In Design",tags:["eB2B","NoQA","NoValidation"],ux_ui:0,data_rel:0,t:0,u:0,d:0,b:0,sp:5,parent:"1381401"},
             {id:"1499120",title:"[eB2B][Tech] Build One Time Shipping Address (OTSA) on the Checkout",assignee:"Edouard",state:"Qualified",tags:["eB2B","NoValidation"],ux_ui:1,data_rel:0,t:0,u:0,d:0,b:0,sp:5,parent:"1381468"},
-            {id:"1445515",title:"[eB2B] Account Address List Display",assignee:"Salma",state:"Ready for QA testing",tags:["eB2B","UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:3,parent:"1381402"},
-            // Cristina Donado
-            {id:"1083626",title:"[OM] Translate Sandbox - Build the OM Translation Playbook & Localization Repository",assignee:"Cristina",state:"Ready to build",tags:["NoQA","NoValidation","Order Mgmt"],ux_ui:0,data_rel:0,t:0,u:0,d:0,b:0,sp:5,parent:"970209"},
-            {id:"1482971",title:"[OM][Tech] Materials - Synchronize Item Promotion Type Using Canonical Data Model 🚩",assignee:"",state:"Ready to build",tags:["0.6 Dependent","eB2B","Order Mgmt"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:0,sp:1,parent:"1016086"},
-            // Riad El Mansour
-            {id:"1445518",title:"[eB2B] Contact Account Manager Widget",assignee:"Salma",state:"Ready for QA testing",tags:["eB2B","FEX","UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:2,parent:"1381402"},
-            // Najat Hbaiz
-            {id:"1433408",title:"[OM] Return Request - Provide Product traceability information (expiry date & batch number)",assignee:"",state:"Ready for Sprint testing",tags:["Order Mgmt"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:2,parent:"970206"},
-            // Eline Josse
+            {id:"1503113",title:"[eB2B] [Change Request] Order Eligibility Rules - Restrict Ordering for Payer and BillTo",assignee:"Julie",state:"Design Review",tags:["ChangeRequest","eB2B","UX"],ux_ui:1,data_rel:0,t:0,u:0,d:0,b:0,sp:2,parent:"1381397"},
+            {id:"1482592",title:"[eB2B] Contact-Level Role Visibility",assignee:"Julie",state:"Realized",tags:["eB2B","UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:3,parent:"1381401"},
+            {id:"1083626",title:"[OM] Translate Sandbox - Build the OM Translation Playbook & Localization Repository",assignee:"Cristina",state:"In Progress",tags:["NoQA","NoValidation","Order Mgmt"],ux_ui:0,data_rel:0,t:0,u:0,d:0,b:0,sp:5,parent:"970209"},
+            {id:"1467229",title:"[eB2B] Login Page Support Access",assignee:"Hamza",state:"Ready to build",tags:["eB2B","UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:3,parent:"1381366"},
+            {id:"1467199",title:"[eB2B] User List Management",assignee:"Hamza",state:"Ready to build",tags:["eB2B","UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:8,parent:"1381402"},
+            {id:"1466388",title:"[eB2B] Order Eligibility Rules",assignee:"Antoine",state:"Realized",tags:["eB2B","UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:3,parent:"1381397"},
+            {id:"1480245",title:"[eB2B] ACR-Based Role Assignment",assignee:"Hamza",state:"Ready to build",tags:["eB2B"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:1,sp:8,parent:"1381401"},
+            {id:"1494697",title:"[eB2B] Checkout Messaging when no address available",assignee:"Hamza",state:"In Build",tags:["eB2B","UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:3,parent:"1381397"},
+            {id:"1503852",title:"[eB2B][Tech] Consider TTL for inventory data",assignee:"Hamza",state:"New",tags:["eB2B","NoQA","NoValidation"],ux_ui:0,data_rel:0,t:0,u:0,d:0,b:0,sp:2,parent:"1381356"},
             {id:"1454728",title:"[OM][Enabler] Define R6 Automated Returns Capabilities",assignee:"Eline",state:"In Progress",tags:["eB2B","Enabler","NoQA","NoValidation","Order Mgmt"],ux_ui:0,data_rel:0,t:0,u:0,d:0,b:0,sp:13,parent:"970206"},
-            // Lhoucine Laghoui
-            {id:"1433099",title:"[OM] Return Request - Provide reason-based evidence",assignee:"Lhoucine",state:"In Build",tags:["Order Mgmt"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:5,parent:"970206"},
             {id:"1454200",title:"[OM] Return Request - Restrict available Return Reasons for B2B Customers",assignee:"Lhoucine",state:"Build Done",tags:["eB2B","Order Mgmt"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:1,sp:2,parent:"970206"},
             {id:"1363368",title:"[OM] Cancellation Email Control & Recipient Selection",assignee:"Lhoucine",state:"Ready to build",tags:["Mockup","Order Mgmt"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:3,parent:"970201"},
+            {id:"1433099",title:"[OM] Return Request - Provide reason-based evidence",assignee:"Lhoucine",state:"Build Done",tags:["Order Mgmt"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:5,parent:"970206"},
             {id:"1443823",title:"[OM] Return Request - Enhance Return Eligibility Window by Return Reason",assignee:"Lhoucine",state:"Build Done",tags:["Order Mgmt"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:3,parent:"970206"},
             {id:"1493201",title:"[OM][Change Request] Order Confirmation Email - Add Disclaimer on Retained Delivery Mode Validation",assignee:"Lhoucine",state:"Ready to build",tags:["ChangeRequest","eB2B","Mockup","Order Mgmt"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:1,parent:"970196"},
-            {id:"1504374",title:"[OM][NFR][Tech] Materials - Synchronize Product Long Description & Minimum Order Quantity 🚩",assignee:"",state:"Ready to build",tags:["0.6 Dependent","eB2B","NFR","Order Mgmt"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:0,sp:1,parent:"1016086"},
-            {id:"1443832",title:"[OM] Return Request - Prevent Return Requests if Minimum Product Value for Physical Return > Total Items Returned Net Value",assignee:"",state:"Ready for Sprint testing",tags:["Order Mgmt"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:3,parent:"970206"},
-            // Salma Laraichi
-            {id:"1445510",title:"[eB2B] Account Navigation Bar",assignee:"Salma",state:"Ready for QA testing",tags:["eB2B","UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:3,parent:"1381402"},
+            {id:"1467249",title:"[eB2B] Manual User Creation & Activation (Internal)",assignee:"Salma",state:"Ready for QA testing",tags:["eB2B"],ux_ui:0,data_rel:0,t:1,u:1,d:0,b:1,sp:3,parent:"1381392"},
             {id:"1445512",title:"[eB2B] Account Data Display",assignee:"Salma",state:"Ready for QA testing",tags:["eB2B","UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:2,parent:"1381402"},
-            {id:"1451753",title:"[eB2B][Change Request] Update UI field mapping for Product Name on eB2B Product Card",assignee:"",state:"Ready for Sprint testing",tags:["ChangeRequest","eB2B","UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:2,parent:"1381443"},
-            // Sara Zakha
-            {id:"1488042",title:"[eB2B] [Change Request] Revise Order Total Component on the Checkout Page",assignee:"",state:"Ready for Sprint testing",tags:["ChangeRequest","eB2B","UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:1,parent:"1381468"},
-            // Unassigned
-            {id:"1488078",title:"[OM] Order Entry Point Validation - Restrict Order Initiation from Bill-To & Payer Accounts and Guide Users to Related Sold-To Accounts",assignee:"",state:"Ready to build",tags:["Mockup","Order Mgmt"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:5,parent:"1403752"},
-            {id:"1490342",title:"[OM][NFR] Salesforce Winter '27 - Execute Release 5 Non-Regression Testing",assignee:"",state:"Ready to build",tags:["NoQA","NoValidation","Order Mgmt"],ux_ui:0,data_rel:0,t:0,u:0,d:0,b:0,sp:5,parent:"970209"},
-            {id:"1494697",title:"[eB2B] Checkout Messaging when no address available",assignee:"Hamza",state:"Ready to build",tags:["eB2B","UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:3,parent:"1381397"},
-            {id:"1483098",title:"[OM][Change Request][Tech] Billing Document - Support Document Types for Free of Charge Orders (ZFOC / ZSFO) 🚩",assignee:"",state:"Ready for Sprint testing",tags:["ChangeRequest","eB2B","Order Mgmt","R4.1 Candidate"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:0,sp:3,parent:"970204"},
-            {id:"1487245",title:"[eB2B] Account - Account switcher button",assignee:"",state:"Ready for Sprint testing",tags:["eB2B","UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:2,parent:"1381397"},
-            {id:"1466388",title:"[eB2B] Order Eligibility Rules",assignee:"Hamza",state:"In Build",tags:["eB2B","UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:3,parent:"1381397"},
-            {id:"1466591",title:"[OM] Customer Eligibility Matrix - Revise Sold-To & Ship-To Validation",assignee:"",state:"Ready to build",tags:["eB2B","Order Mgmt"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:1,sp:1,parent:"1403752"},
+            {id:"1445518",title:"[eB2B] Contact Account Manager Widget",assignee:"Salma",state:"Ready for QA testing",tags:["eB2B","FEX","UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:2,parent:"1381402"},
             {id:"1479376",title:"[eB2B] Global Role Definition Framework",assignee:"Salma",state:"Ready for QA testing",tags:["Data","eB2B","UX"],ux_ui:1,data_rel:1,t:1,u:1,d:1,b:1,sp:8,parent:"1381401"},
-            {id:"1480245",title:"[eB2B] ACR-Based Role Assignment",assignee:"Hamza",state:"Ready to build",tags:["eB2B"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:1,sp:8,parent:"1381401"},
-            {id:"1482592",title:"[eB2B] Contact-Level Role Visibility",assignee:"Julie",state:"Realized",tags:["eB2B","UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:3,parent:"1381401"},
-            {id:"1467185",title:"[eB2B] Visit Detail Page",assignee:"Hamza",state:"Ready to build",tags:["eB2B","FEX","UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:2,parent:"1381481"},
+            {id:"1467185",title:"[eB2B] Visit Detail Page",assignee:"Sara",state:"Ready to build",tags:["eB2B","FEX","UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:2,parent:"1381481"},
             {id:"1467187",title:"[eB2B] Visit History",assignee:"Sara",state:"In Build",tags:["eB2B","FEX","UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:5,parent:"1381481"},
             {id:"1467196",title:"[eB2B] Homepage - Visits History Widget",assignee:"Sara",state:"In Build",tags:["eB2B","FEX","UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:5,parent:"1381411"},
-            {id:"1467199",title:"[eB2B] User List Management",assignee:"Hamza",state:"Ready to build",tags:["eB2B","UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:8,parent:"1381402"},
-            {id:"1503852",title:"[eB2B][Tech] Consider TTL for inventory data",assignee:"Hamza",state:"New",tags:["eB2B","NoQA","NoValidation"],ux_ui:0,data_rel:0,t:0,u:0,d:0,b:0,sp:2,parent:"1381356"},
             {id:"1467205",title:"[eB2B] Okta-Based Authentication Redirection",assignee:"",state:"Ready to build",tags:["eB2B"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:1,sp:2,parent:"1381366"},
             {id:"1467226",title:"[eB2B] Federation ID Handling",assignee:"",state:"Ready to build",tags:["eB2B"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:1,sp:2,parent:"1381366"},
-            {id:"1467229",title:"[eB2B] Login Page Support Access",assignee:"Hamza",state:"Ready to build",tags:["eB2B","UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:3,parent:"1381366"},
             {id:"1467244",title:"[eB2B] Authentication Failure Handling",assignee:"",state:"Ready to build",tags:["eB2B","UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:2,parent:"1381366"},
-            {id:"1467249",title:"[eB2B] Manual User Creation & Activation (Internal)",assignee:"Salma",state:"Ready for QA testing",tags:["eB2B"],ux_ui:0,data_rel:0,t:1,u:1,d:0,b:1,sp:3,parent:"1381392"},
-            {id:"1496989",title:'[OM][TECH] Introduce "SAP Version" Feature Flipping Metadata',assignee:"",state:"Ready to build",tags:["Order Mgmt"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:0,sp:3,parent:"970209"},
-            {id:"1497214",title:"[OM][TECH] Return Order Interface - Support SAP Version Feature Flipping 🚩",assignee:"",state:"Ready to build",tags:["NoQA","Order Mgmt"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:0,sp:5,parent:"970206"},
+            {id:"1451753",title:"[eB2B][Change Request] Update UI field mapping for Product Name on eB2B Product Card",assignee:"",state:"Ready for Sprint testing",tags:["ChangeRequest","eB2B","UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:2,parent:"1381443"},
+            {id:"1445515",title:"[eB2B] Account Address List Display",assignee:"",state:"Ready for Sprint testing",tags:["eB2B","UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:3,parent:"1381402"},
+            {id:"1466591",title:"[OM] Customer Eligibility Matrix - Revise Sold-To & Ship-To Validation",assignee:"",state:"Ready to build",tags:["eB2B","Order Mgmt"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:1,sp:1,parent:"1403752"},
+            {id:"1443825",title:"[OM] Return Request - Block returns based on Account Block Status",assignee:"",state:"Ready for Sprint testing",tags:["Order Mgmt"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:3,parent:"970206"},
+            {id:"1443832",title:"[OM] Return Request - Prevent Return Requests if Minimum Product Value for Physical Return > Total Items Returned Net Value",assignee:"",state:"Ready for Sprint testing",tags:["Order Mgmt"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:3,parent:"970206"},
+            {id:"1445510",title:"[eB2B] Account Navigation Bar",assignee:"",state:"Ready for Sprint testing",tags:["eB2B","UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:3,parent:"1381402"},
+            {id:"1433408",title:"[OM] Return Request - Provide Product traceability information (expiry date & batch number)",assignee:"",state:"Ready for Sprint testing",tags:["Order Mgmt"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:2,parent:"970206"},
+            {id:"1437196",title:"[OM] Order Header - Ship-To Contact Retrieval for Ship-To Initiated Orders",assignee:"",state:"Ready to build",tags:["Order Mgmt"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:1,sp:3,parent:"970114"},
             {id:"1443326",title:"[OM] Unified Order Cancellation (EDI Channel)",assignee:"",state:"Ready for Sprint testing",tags:["Order Mgmt"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:1,sp:1,parent:"970201"},
             {id:"1443330",title:"[OM] Unified Return Requests (EDI Channel)",assignee:"",state:"Ready for Sprint testing",tags:["Order Mgmt"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:1,sp:1,parent:"970206"},
-            {id:"1443825",title:"[OM] Return Request - Block returns based on Account Block Status",assignee:"",state:"Ready for Sprint testing",tags:["Order Mgmt"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:3,parent:"970206"},
+            {id:"1369288",title:"[OM] Unified Order Cancellation (All Channels)",assignee:"",state:"Ready for Sprint testing",tags:["Order Mgmt"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:1,sp:1,parent:"970201"},
             {id:"1381063",title:"[OM] Cancellation Email - Adaptive Cancellation Email Logic (User-Controlled & Multi-Origin)",assignee:"",state:"Ready for Sprint testing",tags:["Order Mgmt"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:1,sp:2,parent:"970201"},
             {id:"1432866",title:"[OM] Return Request - Certify Physical Return Conditions",assignee:"",state:"Ready for Sprint testing",tags:["Order Mgmt"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:3,parent:"970206"},
-            {id:"1369288",title:"[OM] Unified Order Cancellation (All Channels)",assignee:"",state:"Ready for Sprint testing",tags:["Order Mgmt"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:1,sp:1,parent:"970201"}
+            {id:"1482971",title:"[OM][Tech] Materials - Synchronize Item Promotion Type Using Canonical Data Model 🚩",assignee:"",state:"Ready to build",tags:["0.6 Dependent","eB2B","Order Mgmt"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:0,sp:1,parent:"1016086"},
+            {id:"1483098",title:"[OM][Change Request][Tech] Billing Document - Support Document Types for Free of Charge Orders (ZFOC / ZSFO) 🚩",assignee:"",state:"Ready for Sprint testing",tags:["ChangeRequest","eB2B","Order Mgmt","R4.1 Candidate"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:0,sp:3,parent:"970204"},
+            {id:"1487245",title:"[eB2B] Account - Account switcher button",assignee:"",state:"Ready for Sprint testing",tags:["eB2B","UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:2,parent:"1381397"},
+            {id:"1488042",title:"[eB2B] [Change Request] Revise Order Total Component on the Checkout Page",assignee:"",state:"Ready for Sprint testing",tags:["ChangeRequest","eB2B","UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:1,parent:"1381468"},
+            {id:"1488078",title:"[OM] Order Entry Point Validation - Restrict Order Initiation from Bill-To & Payer Accounts and Guide Users to Related Sold-To Accounts",assignee:"",state:"Ready to build",tags:["Mockup","Order Mgmt"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:5,parent:"1403752"},
+            {id:"1490342",title:"[OM][NFR] Salesforce Winter '27 - Execute Release 5 Non-Regression Testing",assignee:"",state:"Ready to build",tags:["NoQA","NoValidation","Order Mgmt"],ux_ui:0,data_rel:0,t:0,u:0,d:0,b:0,sp:5,parent:"970209"},
+            {id:"1504374",title:"[OM][NFR][Tech] Materials - Synchronize Product Long Description & Minimum Order Quantity 🚩",assignee:"",state:"Ready to build",tags:["0.6 Dependent","eB2B","NFR","Order Mgmt"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:0,sp:1,parent:"1016086"},
+            {id:"1496989",title:'[OM][TECH] Introduce "SAP Version" Feature Flipping Metadata',assignee:"",state:"Ready to build",tags:["Order Mgmt"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:0,sp:3,parent:"970209"},
+            {id:"1497214",title:"[OM][TECH] Return Order Interface - Support SAP Version Feature Flipping 🚩",assignee:"",state:"Ready to build",tags:["NoQA","Order Mgmt"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:0,sp:5,parent:"970206"},
+            {id:"1498238",title:"[OM][TECH] Return Order Interface - Support Storefront Return Request Mapping 🚩",assignee:"",state:"Ready to build",tags:["NoQA","Order Mgmt"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:0,sp:2,parent:"970206"}
         ];
 
         // Derive the working maps from the single source
@@ -1524,6 +1512,20 @@
         const parentMissing = parentScope.filter(s => !s.parent);
         const parentPct = parentScope.length > 0 ? ((parentMissing.length / parentScope.length) * 100).toFixed(1) : "0.0";
 
+        // Items marked "Ready" overall but still in an early Work Item Step (New,
+        // Qualified, In Design, Design Review) — surfaces stories whose readiness
+        // is out of step with their ADO State. Items that are "Ready" only because
+        // no validation was ever required are excluded: at least one validation
+        // must have been expected (and therefore completed) to count as a genuine
+        // contradiction.
+        const earlySteps = ["New", "Qualified", "In Design", "Design Review"];
+        const readyScope = viewStories;
+        const readyEarlyStep = readyScope.filter(s =>
+            s.readiness === "Ready" &&
+            earlySteps.includes(s.state) &&
+            (s.uxExpected || s.dataExpected || s.businessExpected || s.solutionExpected));
+        const readyEarlyPct = readyScope.length > 0 ? ((readyEarlyStep.length / readyScope.length) * 100).toFixed(1) : "0.0";
+
         const healthClass = (pct) => { const p = parseFloat(pct); return p === 0 ? 'excellent' : p <= 20 ? 'warning' : 'danger'; };
 
         let healthHTML = '';
@@ -1539,12 +1541,19 @@
         healthHTML += '<div class="kpi-subtitle">' + parentMissing.length + ' of ' + parentScope.length + ' items &nbsp;·&nbsp; <span class="drill-hint">click to view ▸</span></div>';
         healthHTML += '</div>';
 
+        healthHTML += '<div class="kpi-card health-tile ' + healthClass(readyEarlyPct) + '" id="health-tile-readyearly" onclick="toggleHealthDrill(\'readyearly\')">';
+        healthHTML += '<div class="kpi-label">Ready but in an Early Step</div>';
+        healthHTML += '<div class="kpi-value">' + readyEarlyStep.length + '</div>';
+        healthHTML += '<div class="kpi-subtitle">' + readyEarlyStep.length + ' of ' + readyScope.length + ' items in New / Qualified / In Design / Design Review &nbsp;·&nbsp; <span class="drill-hint">click to view ▸</span></div>';
+        healthHTML += '</div>';
+
         document.getElementById('health-kpi-grid').innerHTML = healthHTML;
 
         // Stash the matching item sets for the drill-down
         healthDrillData = {
             sp: { title: 'Items without Story Points', items: spMissing },
-            parent: { title: 'Items without a Parent', items: parentMissing }
+            parent: { title: 'Items without a Parent', items: parentMissing },
+            readyearly: { title: 'Ready but in an Early Work Item Step', items: readyEarlyStep, showState: true }
         };
         // Re-render an open drill-down so it stays in sync with the current view
         if (activeHealthDrill) renderHealthDrill(activeHealthDrill);
@@ -1562,14 +1571,17 @@
             const container = document.getElementById('health-drilldown');
             document.getElementById('health-tile-sp').classList.toggle('selected', key === 'sp');
             document.getElementById('health-tile-parent').classList.toggle('selected', key === 'parent');
+            document.getElementById('health-tile-readyearly').classList.toggle('selected', key === 'readyearly');
 
+            const showState = !!data.showState;
+            const colCount = showState ? 4 : 3;
             let html = '<div class="health-drill">';
             html += '<h3>' + data.title + ' <span style="color:var(--rc-muted); font-weight:400;">(' + data.items.length + ')</span></h3>';
             html += '<div style="overflow-x:auto;"><table><thead><tr>';
-            html += '<th>Story ID</th><th>Title</th><th>Solutioning Status</th>';
+            html += '<th>Story ID</th><th>Title</th>' + (showState ? '<th>Work Item Step</th>' : '') + '<th>Solutioning Status</th>';
             html += '</tr></thead><tbody>';
             if (data.items.length === 0) {
-                html += '<tr><td colspan="3" style="text-align:center; color:#999;">No items — this check passes for the current view. 🎉</td></tr>';
+                html += '<tr><td colspan="' + colCount + '" style="text-align:center; color:#999;">No items — this check passes for the current view. 🎉</td></tr>';
             } else {
                 data.items.forEach(s => {
                     const adoUrl = 'https://dev.azure.com/MarsDevTeam/EOS/_workitems/edit/' + s.id;
@@ -1577,6 +1589,7 @@
                     html += '<tr>';
                     html += '<td class="story-id"><a href="' + adoUrl + '" target="_blank">' + s.id + '</a></td>';
                     html += '<td class="story-title">' + s.title + '</td>';
+                    if (showState) html += '<td style="color:#1a1a1a;">' + (s.state || '-') + '</td>';
                     html += '<td style="color:#1a1a1a;">' + sol.emoji + ' ' + sol.label + '</td>';
                     html += '</tr>';
                 });
@@ -1591,6 +1604,7 @@
                 document.getElementById('health-drilldown').innerHTML = '';
                 document.getElementById('health-tile-sp').classList.remove('selected');
                 document.getElementById('health-tile-parent').classList.remove('selected');
+                document.getElementById('health-tile-readyearly').classList.remove('selected');
             } else {
                 activeHealthDrill = key;
                 renderHealthDrill(key);
