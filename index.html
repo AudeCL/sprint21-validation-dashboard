@@ -745,7 +745,7 @@
             </div>
         </div>
         <div class="data-refresh-notice">
-            <strong>ℹ️ Data Refresh:</strong> ADO data last extracted on <strong>September 15, 2026 at 10:17 AM CEST</strong>.
+            <strong>ℹ️ Data Refresh:</strong> ADO data last extracted on <strong>September 16, 2026 at 7:33 PM CEST</strong>.
             Validations completed in ADO after this time may not be reflected yet. Dashboard will be refreshed periodically.
         </div>
     </div>
@@ -905,36 +905,14 @@
         // validation flags (t/u/d/b = Technical/UX/Data/Business, 1 = completed in ADO),
         // story points & parent.
         const rawItems = [
-            {id:"1539830",title:"[eB2B][Tech] Rework auto delete expired webcarts flow as scheduled apex",assignee:"Antoine",state:"Realized",tags:["eB2B", "NoQA", "NoValidation"],ux_ui:0,data_rel:0,t:0,u:0,d:0,b:0,sp:5,parent:"1381363"},
-            {id:"1539862",title:"[eB2B][Tech] Ensure addToCart in apex checks entitlement",assignee:"Antoine",state:"Realized",tags:["eB2B", "NoQA", "NoValidation"],ux_ui:0,data_rel:0,t:0,u:0,d:0,b:0,sp:5,parent:"1381363"},
-            {id:"1543268",title:"[eB2B][Tech] Configure Experience Cloud CSP for Digital Experience Tools",assignee:"Antoine",state:"Realized",tags:["Build", "eB2B", "NoValidation", "Salesforce"],ux_ui:0,data_rel:0,t:0,u:0,d:0,b:0,sp:2,parent:"1381364"},
-            {id:"1544441",title:"[eB2B][Change Request] Sellable Finished Goods - Fallback to Base UoM when Sales UoM is unavailable",assignee:"Hamza",state:"Build Done",tags:["ChangeRequest", "eB2B", "SF_eB2B_Add products to Cart via Product Catalogue", "UX"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:1,sp:1,parent:"1381430"},
+            {id:"1539830",title:"[eB2B][Tech] Rework auto delete expired webcarts flow as scheduled apex",assignee:"Edouard",state:"Realized",tags:["eB2B", "NoQA", "NoValidation"],ux_ui:0,data_rel:0,t:0,u:0,d:0,b:0,sp:5,parent:"1381363"},
+            {id:"1539862",title:"[eB2B][Tech] Ensure addToCart in apex checks entitlement",assignee:"Edouard",state:"Ready for QA testing",tags:["eB2B", "NoQA", "NoValidation"],ux_ui:0,data_rel:0,t:0,u:0,d:0,b:0,sp:5,parent:"1381363"},
             {id:"1454728",title:"[OM][Enabler] Define R6 Automated Returns Capabilities",assignee:"Eline",state:"In Progress",tags:["eB2B", "Enabler", "NoQA", "NoValidation", "Order Mgmt"],ux_ui:0,data_rel:0,t:0,u:0,d:0,b:0,sp:13,parent:"970206"},
+            {id:"1543023",title:"[eB2B][Tech] Replace infinite Spinner on PLP with Empty Search Page",assignee:"Salma",state:"Waiting for bug fixing",tags:["eB2B", "NoQA", "NoValidation"],ux_ui:0,data_rel:0,t:0,u:0,d:0,b:0,sp:3,parent:"1381363"},
             {id:"1467185",title:"[eB2B] Visit Detail Page",assignee:"Salma",state:"Ready for QA testing",tags:["eB2B", "FEX", "UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:2,parent:"1381481"},
-            {id:"1467205",title:"[eB2B] Okta-Based Authentication Redirection",assignee:"Salma",state:"Ready for QA testing",tags:["eB2B", "SF_eB2B_Connect to Webshop as a Sold-To"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:1,sp:2,parent:"1381366"},
-            {id:"1467226",title:"[eB2B] Federation ID Handling",assignee:"Salma",state:"Ready for QA testing",tags:["eB2B", "SF_eB2B_Connect to Webshop as a Sold-To"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:1,sp:2,parent:"1381366"},
-            {id:"1467229",title:"[eB2B] Login Page Support Access",assignee:"Salma",state:"Ready for QA testing",tags:["eB2B", "UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:3,parent:"1381366"},
+            {id:"1467226",title:"[eB2B] Federation ID Handling",assignee:"Salma",state:"Waiting for bug fixing",tags:["eB2B", "SF_eB2B_Connect to Webshop as a Sold-To"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:1,sp:2,parent:"1381366"},
+            {id:"1467229",title:"[eB2B] Login Page Support Access",assignee:"Salma",state:"Waiting for bug fixing",tags:["eB2B", "UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:3,parent:"1381366"},
             {id:"1467244",title:"[eB2B] Authentication Failure Handling",assignee:"Salma",state:"Ready for QA testing",tags:["eB2B", "SF_eB2B_Connect to Webshop as a Sold-To", "UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:2,parent:"1381366"},
-            {id:"1272637",title:"[OM][Tech] Fetch Account Receivable Data (Customer Balance Details) 🚩",assignee:"Mircea",state:"In Build",tags:["BestEffort", "NoQA", "Order Mgmt"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:0,sp:5,parent:"970114"},
-            {id:"1363368",title:"[OM] Cancellation Email Control & Recipient Selection",assignee:"",state:"Ready for Sprint testing",tags:["Mockup", "Order Mgmt"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:3,parent:"970201"},
-            {id:"1369288",title:"[OM] Unified Order Cancellation (All Channels)",assignee:"",state:"Ready for Sprint testing",tags:["Order Mgmt"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:1,sp:1,parent:"970201"},
-            {id:"1372523",title:"[OM] OrderPad Product Catalog - Update Advanced Filter Attributes",assignee:"",state:"Ready for Sprint testing",tags:["FEX", "Mockup", "Order Mgmt"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:5,parent:"970147"},
-            {id:"1381063",title:"[OM] Cancellation Email - Adaptive Cancellation Email Logic (User-Controlled & Multi-Origin)",assignee:"",state:"Ready for Sprint testing",tags:["Order Mgmt"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:1,sp:2,parent:"970201"},
-            {id:"1432866",title:"[OM] Return Request - Certify Physical Return Conditions",assignee:"",state:"Ready for Sprint testing",tags:["Order Mgmt"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:3,parent:"970206"},
-            {id:"1433099",title:"[OM] Return Request - Provide reason-based evidence",assignee:"",state:"Ready for Sprint testing",tags:["Order Mgmt"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:5,parent:"970206"},
-            {id:"1433408",title:"[OM] Return Request - Provide Product traceability information (expiry date & batch number)",assignee:"",state:"Ready for Sprint testing",tags:["Order Mgmt"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:2,parent:"970206"},
-            {id:"1437196",title:"[OM] Order Header - Ship-To Contact Retrieval for Ship-To Initiated Orders",assignee:"",state:"Ready for Sprint testing",tags:["Order Mgmt"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:1,sp:3,parent:"970114"},
-            {id:"1443326",title:"[OM] Unified Order Cancellation (EDI Channel)",assignee:"",state:"Ready for Sprint testing",tags:["Order Mgmt"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:1,sp:1,parent:"970201"},
-            {id:"1443330",title:"[OM] Unified Return Requests (EDI Channel)",assignee:"",state:"Ready for Sprint testing",tags:["Order Mgmt"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:1,sp:1,parent:"970206"},
-            {id:"1443823",title:"[OM] Return Request - Enhance Return Eligibility Window by Return Reason",assignee:"",state:"Ready for Sprint testing",tags:["Order Mgmt"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:3,parent:"970206"},
-            {id:"1443825",title:"[OM] Return Request - Block returns based on Account Block Status",assignee:"",state:"Ready for Sprint testing",tags:["Order Mgmt"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:3,parent:"970206"},
-            {id:"1443832",title:"[OM] Return Request - Prevent Return Requests if Minimum Product Value for Physical Return > Total Items Returned Net Value",assignee:"",state:"Ready for Sprint testing",tags:["Order Mgmt"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:3,parent:"970206"},
-            {id:"1445510",title:"[eB2B] Account Navigation Bar",assignee:"",state:"Ready for Sprint testing",tags:["eB2B", "UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:3,parent:"1381402"},
-            {id:"1445512",title:"[eB2B] Account Data Display",assignee:"",state:"Ready for Sprint testing",tags:["eB2B", "UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:2,parent:"1381402"},
-            {id:"1445515",title:"[eB2B] Account Address List Display",assignee:"",state:"Ready for Sprint testing",tags:["eB2B", "UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:3,parent:"1381402"},
-            {id:"1445518",title:"[eB2B] Contact Account Manager Widget",assignee:"",state:"Ready for Sprint testing",tags:["eB2B", "FEX", "UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:2,parent:"1381402"},
-            {id:"1451753",title:"[eB2B][Change Request] Update UI field mapping for Product Name on eB2B Product Card",assignee:"",state:"Ready for Sprint testing",tags:["ChangeRequest", "eB2B", "UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:2,parent:"1381443"},
-            {id:"1454200",title:"[OM] Return Request - Restrict available Return Reasons for B2B Customers",assignee:"",state:"Ready for Sprint testing",tags:["eB2B", "Order Mgmt"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:1,sp:2,parent:"970206"},
             {id:"1467249",title:"[eB2B] Manual User Creation & Activation (Internal)",assignee:"",state:"Ready for Sprint testing",tags:["eB2B"],ux_ui:0,data_rel:0,t:1,u:1,d:0,b:1,sp:3,parent:"1381392"},
             {id:"1468710",title:"[OM][TECH] Product - Enhance ZREP vs. Copack Item Type Classification",assignee:"",state:"Ready for Sprint testing",tags:["0.6 Dependent", "eB2B", "Order Mgmt"],ux_ui:0,data_rel:1,t:1,u:0,d:1,b:0,sp:1,parent:"1016086"},
             {id:"1479376",title:"[eB2B] Global Role Definition Framework",assignee:"",state:"Ready for Sprint testing",tags:["Data", "eB2B", "UX"],ux_ui:1,data_rel:1,t:1,u:1,d:1,b:1,sp:8,parent:"1381401"},
@@ -955,13 +933,34 @@
             {id:"1503852",title:"[eB2B][Tech] Consider TTL for inventory data",assignee:"",state:"Ready for Sprint testing",tags:["eB2B", "NoQA", "NoValidation"],ux_ui:0,data_rel:0,t:0,u:0,d:0,b:0,sp:2,parent:"1381356"},
             {id:"1504374",title:"[OM][NFR][Tech] Materials - Synchronize Product Long Description & Minimum Order Quantity 🚩",assignee:"",state:"Ready for Sprint testing",tags:["0.6 Dependent", "eB2B", "NFR", "Order Mgmt"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:0,sp:1,parent:"1016086"},
             {id:"1512760",title:"[eB2B][Change Request] Adyen Merchant Account - Align DEV5 for SAP E2E Testing",assignee:"",state:"Ready for Sprint testing",tags:["ChangeRequest", "eB2B"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:1,sp:1,parent:"1381469"},
+            {id:"1083626",title:"[OM] Translate Sandbox - Build the OM Translation Playbook & Localization Repository",assignee:"",state:"Ready for Sprint testing",tags:["NoQA", "NoValidation", "Order Mgmt"],ux_ui:0,data_rel:0,t:0,u:0,d:0,b:0,sp:5,parent:"970209"},
+            {id:"1363368",title:"[OM] Cancellation Email Control & Recipient Selection",assignee:"",state:"Ready for Sprint testing",tags:["Mockup", "Order Mgmt"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:3,parent:"970201"},
+            {id:"1369288",title:"[OM] Unified Order Cancellation (All Channels)",assignee:"",state:"Ready for Sprint testing",tags:["Order Mgmt"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:1,sp:1,parent:"970201"},
+            {id:"1372523",title:"[OM] OrderPad Product Catalog - Update Advanced Filter Attributes",assignee:"",state:"Ready for Sprint testing",tags:["FEX", "Mockup", "Order Mgmt"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:5,parent:"970147"},
+            {id:"1381063",title:"[OM] Cancellation Email - Adaptive Cancellation Email Logic (User-Controlled & Multi-Origin)",assignee:"",state:"Ready for Sprint testing",tags:["Order Mgmt"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:1,sp:2,parent:"970201"},
+            {id:"1432866",title:"[OM] Return Request - Certify Physical Return Conditions",assignee:"",state:"Ready for Sprint testing",tags:["Order Mgmt"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:3,parent:"970206"},
+            {id:"1433099",title:"[OM] Return Request - Provide reason-based evidence",assignee:"",state:"Ready for Sprint testing",tags:["Order Mgmt"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:5,parent:"970206"},
+            {id:"1433408",title:"[OM] Return Request - Provide Product traceability information (expiry date & batch number)",assignee:"",state:"Ready for Sprint testing",tags:["Order Mgmt"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:2,parent:"970206"},
+            {id:"1437196",title:"[OM] Order Header - Ship-To Contact Retrieval for Ship-To Initiated Orders",assignee:"",state:"Ready for Sprint testing",tags:["Order Mgmt"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:1,sp:3,parent:"970114"},
+            {id:"1443326",title:"[OM] Unified Order Cancellation (EDI Channel)",assignee:"",state:"Ready for Sprint testing",tags:["Order Mgmt"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:1,sp:1,parent:"970201"},
+            {id:"1443330",title:"[OM] Unified Return Requests (EDI Channel)",assignee:"",state:"Ready for Sprint testing",tags:["Order Mgmt"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:1,sp:1,parent:"970206"},
+            {id:"1443823",title:"[OM] Return Request - Enhance Return Eligibility Window by Return Reason",assignee:"",state:"Ready for Sprint testing",tags:["Order Mgmt"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:3,parent:"970206"},
+            {id:"1443825",title:"[OM] Return Request - Block returns based on Account Block Status",assignee:"",state:"Ready for Sprint testing",tags:["Order Mgmt"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:3,parent:"970206"},
+            {id:"1443832",title:"[OM] Return Request - Prevent Return Requests if Minimum Product Value for Physical Return > Total Items Returned Net Value",assignee:"",state:"Ready for Sprint testing",tags:["Order Mgmt"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:3,parent:"970206"},
+            {id:"1445510",title:"[eB2B] Account Navigation Bar",assignee:"",state:"Ready for Sprint testing",tags:["eB2B", "UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:3,parent:"1381402"},
+            {id:"1445512",title:"[eB2B] Account Data Display",assignee:"",state:"Ready for Sprint testing",tags:["eB2B", "UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:2,parent:"1381402"},
+            {id:"1445515",title:"[eB2B] Account Address List Display",assignee:"",state:"Ready for Sprint testing",tags:["eB2B", "UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:3,parent:"1381402"},
+            {id:"1445518",title:"[eB2B] Contact Account Manager Widget",assignee:"",state:"Ready for Sprint testing",tags:["eB2B", "FEX", "UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:2,parent:"1381402"},
+            {id:"1451753",title:"[eB2B][Change Request] Update UI field mapping for Product Name on eB2B Product Card",assignee:"",state:"Ready for Sprint testing",tags:["ChangeRequest", "eB2B", "UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:2,parent:"1381443"},
+            {id:"1454200",title:"[OM] Return Request - Restrict available Return Reasons for B2B Customers",assignee:"",state:"Ready for Sprint testing",tags:["eB2B", "Order Mgmt"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:1,sp:2,parent:"970206"},
             {id:"1467187",title:"[eB2B] Visit History",assignee:"",state:"Ready for Sprint testing",tags:["eB2B", "FEX", "UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:5,parent:"1381481"},
             {id:"1467196",title:"[eB2B] Homepage - Visits History Widget",assignee:"",state:"Ready for Sprint testing",tags:["eB2B", "FEX", "UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:5,parent:"1381411"},
             {id:"1467199",title:"[eB2B] User List Management",assignee:"",state:"Ready for Sprint testing",tags:["eB2B", "UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:8,parent:"1381402"},
+            {id:"1467205",title:"[eB2B] Okta-Based Authentication Redirection",assignee:"",state:"Ready for Sprint testing",tags:["eB2B", "SF_eB2B_Connect to Webshop as a Sold-To"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:1,sp:2,parent:"1381366"},
+            {id:"1543268",title:"[eB2B][Tech] Configure Experience Cloud CSP for Digital Experience Tools",assignee:"",state:"Ready for Sprint testing",tags:["Build", "eB2B", "NoValidation", "Salesforce"],ux_ui:0,data_rel:0,t:0,u:0,d:0,b:0,sp:2,parent:"1381364"},
+            {id:"1544441",title:"[eB2B][Change Request] Sellable Finished Goods - Fallback to Base UoM when Sales UoM is unavailable",assignee:"",state:"Ready for Sprint testing",tags:["ChangeRequest", "eB2B", "SF_eB2B_Add products to Cart via Product Catalogue", "UX"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:1,sp:1,parent:"1381430"},
             {id:"1466388",title:"[eB2B] Order Eligibility Rules",assignee:"",state:"Ready for Sprint testing",tags:["eB2B", "UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:3,parent:"1381397"},
-            {id:"1466591",title:"[OM] Customer Eligibility Matrix - Revise Sold-To & Ship-To Validation",assignee:"",state:"Ready for Sprint testing",tags:["eB2B", "Order Mgmt"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:1,sp:1,parent:"1403752"},
-            {id:"1543023",title:"[eB2B][Tech] Replace infinite Spinner on PLP with Empty Search Page",assignee:"",state:"Ready for Sprint testing",tags:["eB2B", "NoQA", "NoValidation"],ux_ui:0,data_rel:0,t:0,u:0,d:0,b:0,sp:3,parent:"1381363"},
-            {id:"1083626",title:"[OM] Translate Sandbox - Build the OM Translation Playbook & Localization Repository",assignee:"",state:"Ready for Sprint testing",tags:["NoQA", "NoValidation", "Order Mgmt"],ux_ui:0,data_rel:0,t:0,u:0,d:0,b:0,sp:5,parent:"970209"}
+            {id:"1466591",title:"[OM] Customer Eligibility Matrix - Revise Sold-To & Ship-To Validation",assignee:"",state:"Ready for Sprint testing",tags:["eB2B", "Order Mgmt"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:1,sp:1,parent:"1403752"}
         ];
 
         // Derive the working maps from the single source
