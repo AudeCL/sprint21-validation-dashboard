@@ -745,7 +745,7 @@
             </div>
         </div>
         <div class="data-refresh-notice">
-            <strong>ℹ️ Data Refresh:</strong> ADO data last extracted on <strong>September 21, 2026 at 9:53 AM CEST</strong>.
+            <strong>ℹ️ Data Refresh:</strong> ADO data last extracted on <strong>September 28, 2026 at 6:50 PM CEST</strong>.
             Validations completed in ADO after this time may not be reflected yet. Dashboard will be refreshed periodically.
         </div>
     </div>
@@ -794,11 +794,11 @@
                 </div>
                 <div class="legend-item-row">
                     <span class="legend-status">🟡 Under Finalisation</span>
-                    <span class="legend-desc">The Salesforce team is finalising the User Story in design review. If validation is required, reviewers may already start providing feedback, understanding that minor updates or clarifications may still be introduced.<br><em style="color:#6c757d;">🔍 In ADO: State = <strong>Design Review</strong> and assigned to a Salesforce team member.</em></span>
+                    <span class="legend-desc">The Salesforce team is finalising the User Story after design. If validation is required, reviewers may already start providing feedback, understanding that minor updates or clarifications may still be introduced.<br><em style="color:#6c757d;">🔍 In ADO: State = <strong>Design Completed</strong>.</em></span>
                 </div>
                 <div class="legend-item-row">
                     <span class="legend-status">🟢 Finalised</span>
-                    <span class="legend-desc">The Salesforce team has completed the User Story. If validation is required, the item is ready for stakeholder review and approval.<br><em style="color:#6c757d;">🔍 In ADO: State = <strong>Design Review</strong> unassigned or assigned to a non-Salesforce stakeholder — or any state beyond Design Review (e.g. Ready to build, In Build, Ready for QA…), regardless of assignee.</em></span>
+                    <span class="legend-desc">The Salesforce team has completed the User Story. If validation is required, the item is ready for stakeholder review and approval.<br><em style="color:#6c757d;">🔍 In ADO: any state beyond Design Completed (e.g. Ready to build, In Build, Ready for QA…).</em></span>
                 </div>
             </div>
             <div style="overflow-x: auto;">
@@ -905,33 +905,6 @@
         // validation flags (t/u/d/b = Technical/UX/Data/Business, 1 = completed in ADO),
         // story points & parent.
         const rawItems = [
-            {id:"1467244",title:"[eB2B] Authentication Failure Handling",assignee:"Salma",state:"Ready for QA testing",tags:["eB2B", "SF_eB2B_Connect to Webshop as a Sold-To", "UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:2,parent:"1381366"},
-            {id:"1467249",title:"[eB2B] Manual User Creation & Activation (Internal)",assignee:"",state:"Ready for Sprint testing",tags:["eB2B"],ux_ui:0,data_rel:0,t:1,u:1,d:0,b:1,sp:3,parent:"1381392"},
-            {id:"1468710",title:"[OM][TECH] Product - Enhance ZREP vs. Copack Item Type Classification",assignee:"",state:"Ready for Sprint testing",tags:["0.6 Dependent", "eB2B", "Order Mgmt"],ux_ui:0,data_rel:1,t:1,u:0,d:1,b:0,sp:1,parent:"1016086"},
-            {id:"1479376",title:"[eB2B] Global Role Definition Framework",assignee:"",state:"Ready for Sprint testing",tags:["Data", "eB2B", "UX"],ux_ui:1,data_rel:1,t:1,u:1,d:1,b:1,sp:8,parent:"1381401"},
-            {id:"1480245",title:"[eB2B] ACR-Based Role Assignment",assignee:"",state:"Ready for Sprint testing",tags:["eB2B"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:1,sp:8,parent:"1381401"},
-            {id:"1482592",title:"[eB2B] Contact-Level Role Visibility",assignee:"",state:"Ready for Sprint testing",tags:["eB2B", "UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:3,parent:"1381401"},
-            {id:"1482971",title:"[OM][Tech] Materials - Synchronize Item Promotion Type Using Canonical Data Model 🚩",assignee:"",state:"Ready for Sprint testing",tags:["0.6 Dependent", "eB2B", "Order Mgmt"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:0,sp:1,parent:"1016086"},
-            {id:"1487245",title:"[eB2B] Account - Account switcher button",assignee:"",state:"Ready for Sprint testing",tags:["eB2B", "UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:2,parent:"1381397"},
-            {id:"1488042",title:"[eB2B] [Change Request] Revise Order Total Component on the Checkout Page",assignee:"",state:"Ready for Sprint testing",tags:["ChangeRequest", "eB2B", "UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:1,parent:"1381468"},
-            {id:"1488078",title:"[OM] Order Entry Point Validation - Restrict Order Initiation from Bill-To & Payer Accounts and Guide Users to Related Sold-To Accounts",assignee:"",state:"Ready for Sprint testing",tags:["Mockup", "Order Mgmt"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:5,parent:"1403752"},
-            {id:"1490342",title:"[OM][NFR] Salesforce Winter '27 - Execute Release 5 Non-Regression Testing",assignee:"",state:"Closed",tags:["NoQA", "NoValidation", "Order Mgmt"],ux_ui:0,data_rel:0,t:0,u:0,d:0,b:0,sp:0,parent:"970209"},
-            {id:"1493201",title:"[OM][Change Request] Order Confirmation Email - Add Disclaimer on Retained Delivery Mode Validation",assignee:"",state:"Ready for Sprint testing",tags:["ChangeRequest", "eB2B", "Mockup", "Order Mgmt"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:1,parent:"970196"},
-            {id:"1494697",title:"[eB2B] Checkout Messaging when no address available",assignee:"",state:"Ready for Sprint testing",tags:["eB2B", "SF_eB2B_Select Shipping Address & Delivery Date", "UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:3,parent:"1381397"},
-            {id:"1496230",title:"[eB2B][Tech] Automatically create ACR on the SoldTo (and shipTos)",assignee:"",state:"Ready for Sprint testing",tags:["eB2B", "NoQA", "NoValidation"],ux_ui:0,data_rel:0,t:0,u:0,d:0,b:0,sp:5,parent:"1381401"},
-            {id:"1496989",title:"[OM][TECH] Introduce \"SAP Version\" Feature Flipping Metadata",assignee:"",state:"Ready for Sprint testing",tags:["Order Mgmt"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:0,sp:3,parent:"970209"},
-            {id:"1497214",title:"[OM][TECH] Return Order Interface - Support SAP Version Feature Flipping  🚩",assignee:"",state:"Ready for Sprint testing",tags:["NoQA", "Order Mgmt"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:0,sp:5,parent:"970206"},
-            {id:"1499120",title:"[eB2B][Tech] Build One Time Shipping Address (OTSA) on the Checkout",assignee:"",state:"Ready for Sprint testing",tags:["eB2B", "SF_eB2B_Select Shipping Address & Delivery Date"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:5,parent:"1381468"},
-            {id:"1503113",title:"[eB2B] [Change Request] Order Eligibility Rules - Restrict Ordering for Payer and BillTo",assignee:"",state:"Ready for Sprint testing",tags:["ChangeRequest", "eB2B", "UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:2,parent:"1381397"},
-            {id:"1503852",title:"[eB2B][Tech] Consider TTL for inventory data",assignee:"",state:"Ready for Sprint testing",tags:["eB2B", "NoQA", "NoValidation"],ux_ui:0,data_rel:0,t:0,u:0,d:0,b:0,sp:2,parent:"1381356"},
-            {id:"1504374",title:"[OM][NFR][Tech] Materials - Synchronize Product Long Description & Minimum Order Quantity 🚩",assignee:"",state:"Ready for Sprint testing",tags:["0.6 Dependent", "eB2B", "NFR", "Order Mgmt"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:0,sp:1,parent:"1016086"},
-            {id:"1512760",title:"[eB2B][Change Request] Adyen Merchant Account - Align DEV5 for SAP E2E Testing",assignee:"",state:"Ready for Sprint testing",tags:["ChangeRequest", "eB2B"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:1,sp:1,parent:"1381469"},
-            {id:"1539830",title:"[eB2B][Tech] Rework auto delete expired webcarts flow as scheduled apex",assignee:"",state:"Ready for Sprint testing",tags:["eB2B", "NoQA", "NoValidation"],ux_ui:0,data_rel:0,t:0,u:0,d:0,b:0,sp:5,parent:"1381363"},
-            {id:"1539862",title:"[eB2B][Tech] Ensure addToCart in apex checks entitlement",assignee:"",state:"Ready for Sprint testing",tags:["eB2B", "NoQA", "NoValidation"],ux_ui:0,data_rel:0,t:0,u:0,d:0,b:0,sp:5,parent:"1381363"},
-            {id:"1543023",title:"[eB2B][Tech] Replace infinite Spinner on PLP with Empty Search Page",assignee:"",state:"Ready for Sprint testing",tags:["eB2B", "NoQA", "NoValidation"],ux_ui:0,data_rel:0,t:0,u:0,d:0,b:0,sp:3,parent:"1381363"},
-            {id:"1543268",title:"[eB2B][Tech] Configure Experience Cloud CSP for Digital Experience Tools",assignee:"",state:"Ready for Sprint testing",tags:["Build", "eB2B", "NoValidation", "Salesforce"],ux_ui:0,data_rel:0,t:0,u:0,d:0,b:0,sp:2,parent:"1381364"},
-            {id:"1544441",title:"[eB2B][Change Request] Sellable Finished Goods - Fallback to Base UoM when Sales UoM is unavailable",assignee:"",state:"Ready for Sprint testing",tags:["ChangeRequest", "eB2B", "SF_eB2B_Add products to Cart via Product Catalogue", "UX"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:1,sp:1,parent:"1381430"},
-            {id:"1558373",title:"[eB2B][Tech] Move negotiated price to org cache instead of session cache",assignee:"",state:"Ready for Sprint testing",tags:["eB2B", "NoQA", "NoValidation"],ux_ui:0,data_rel:0,t:0,u:0,d:0,b:0,sp:2,parent:""},
             {id:"1083626",title:"[OM] Translate Sandbox - Build the OM Translation Playbook & Localization Repository",assignee:"",state:"Ready for Sprint testing",tags:["NoQA", "NoValidation", "Order Mgmt"],ux_ui:0,data_rel:0,t:0,u:0,d:0,b:0,sp:5,parent:"970209"},
             {id:"1363368",title:"[OM] Cancellation Email Control & Recipient Selection",assignee:"",state:"Ready for Sprint testing",tags:["Mockup", "Order Mgmt"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:3,parent:"970201"},
             {id:"1369288",title:"[OM] Unified Order Cancellation (All Channels)",assignee:"",state:"Ready for Sprint testing",tags:["Order Mgmt"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:1,sp:1,parent:"970201"},
@@ -960,7 +933,34 @@
             {id:"1467199",title:"[eB2B] User List Management",assignee:"",state:"Ready for Sprint testing",tags:["eB2B", "UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:8,parent:"1381402"},
             {id:"1467205",title:"[eB2B] Okta-Based Authentication Redirection",assignee:"",state:"Ready for Sprint testing",tags:["eB2B", "SF_eB2B_Connect to Webshop as a Sold-To"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:1,sp:2,parent:"1381366"},
             {id:"1467226",title:"[eB2B] Federation ID Handling",assignee:"",state:"Ready for Sprint testing",tags:["eB2B", "SF_eB2B_Connect to Webshop as a Sold-To"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:1,sp:2,parent:"1381366"},
-            {id:"1467229",title:"[eB2B] Login Page Support Access",assignee:"",state:"Ready for Sprint testing",tags:["eB2B", "UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:3,parent:"1381366"}
+            {id:"1467229",title:"[eB2B] Login Page Support Access",assignee:"",state:"Ready for Sprint testing",tags:["eB2B", "UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:3,parent:"1381366"},
+            {id:"1467244",title:"[eB2B] Authentication Failure Handling",assignee:"",state:"Ready for Sprint testing",tags:["eB2B", "SF_eB2B_Connect to Webshop as a Sold-To", "UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:2,parent:"1381366"},
+            {id:"1467249",title:"[eB2B] Manual User Creation & Activation (Internal)",assignee:"",state:"Ready for Sprint testing",tags:["eB2B"],ux_ui:0,data_rel:0,t:1,u:1,d:0,b:1,sp:3,parent:"1381392"},
+            {id:"1468710",title:"[OM][TECH] Product - Enhance ZREP vs. Copack Item Type Classification",assignee:"",state:"Ready for Sprint testing",tags:["0.6 Dependent", "eB2B", "Order Mgmt"],ux_ui:0,data_rel:1,t:1,u:0,d:1,b:0,sp:1,parent:"1016086"},
+            {id:"1479376",title:"[eB2B] Global Role Definition Framework",assignee:"",state:"Ready for Sprint testing",tags:["Data", "eB2B", "UX"],ux_ui:1,data_rel:1,t:1,u:1,d:1,b:1,sp:8,parent:"1381401"},
+            {id:"1480245",title:"[eB2B] ACR-Based Role Assignment",assignee:"",state:"Ready for Sprint testing",tags:["eB2B"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:1,sp:8,parent:"1381401"},
+            {id:"1482592",title:"[eB2B] Contact-Level Role Visibility",assignee:"",state:"Ready for Sprint testing",tags:["eB2B", "UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:3,parent:"1381401"},
+            {id:"1482971",title:"[OM][Tech] Materials - Synchronize Item Promotion Type Using Canonical Data Model 🚩",assignee:"",state:"Ready for Sprint testing",tags:["0.6 Dependent", "eB2B", "Order Mgmt"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:0,sp:1,parent:"1016086"},
+            {id:"1487245",title:"[eB2B] Account - Account switcher button",assignee:"",state:"Ready for Sprint testing",tags:["eB2B", "UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:2,parent:"1381397"},
+            {id:"1488042",title:"[eB2B] [Change Request] Revise Order Total Component on the Checkout Page",assignee:"",state:"Ready for Sprint testing",tags:["ChangeRequest", "eB2B", "UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:1,parent:"1381468"},
+            {id:"1488078",title:"[OM] Order Entry Point Validation - Restrict Order Initiation from Bill-To & Payer Accounts and Guide Users to Related Sold-To Accounts",assignee:"",state:"Ready for Sprint testing",tags:["Mockup", "Order Mgmt"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:5,parent:"1403752"},
+            {id:"1490342",title:"[OM][NFR] Salesforce Winter '27 - Execute Release 5 Non-Regression Testing",assignee:"",state:"Closed",tags:["NoQA", "NoValidation", "Order Mgmt"],ux_ui:0,data_rel:0,t:0,u:0,d:0,b:0,sp:1,parent:"970209"},
+            {id:"1493201",title:"[OM][Change Request] Order Confirmation Email - Add Disclaimer on Retained Delivery Mode Validation",assignee:"",state:"Ready for Sprint testing",tags:["ChangeRequest", "eB2B", "Mockup", "Order Mgmt"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:1,parent:"970196"},
+            {id:"1494697",title:"[eB2B] Checkout Messaging when no address available",assignee:"",state:"Ready for Sprint testing",tags:["eB2B", "SF_eB2B_Select Shipping Address & Delivery Date", "UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:3,parent:"1381397"},
+            {id:"1496230",title:"[eB2B][Tech] Automatically create ACR on the SoldTo (and shipTos)",assignee:"",state:"Ready for Sprint testing",tags:["eB2B", "NoQA", "NoValidation"],ux_ui:0,data_rel:0,t:0,u:0,d:0,b:0,sp:5,parent:"1381401"},
+            {id:"1496989",title:"[OM][TECH] Introduce \"SAP Version\" Feature Flipping Metadata",assignee:"",state:"Ready for Sprint testing",tags:["Order Mgmt"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:0,sp:3,parent:"970209"},
+            {id:"1497214",title:"[OM][TECH] Return Order Interface - Support SAP Version Feature Flipping  🚩",assignee:"",state:"Ready for Sprint testing",tags:["NoQA", "Order Mgmt"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:0,sp:5,parent:"970206"},
+            {id:"1499120",title:"[eB2B][Tech] Build One Time Shipping Address (OTSA) on the Checkout",assignee:"",state:"Ready for Sprint testing",tags:["eB2B", "SF_eB2B_Select Shipping Address & Delivery Date"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:5,parent:"1381468"},
+            {id:"1503113",title:"[eB2B] [Change Request] Order Eligibility Rules - Restrict Ordering for Payer and BillTo",assignee:"",state:"Ready for Sprint testing",tags:["ChangeRequest", "eB2B", "UX"],ux_ui:1,data_rel:0,t:1,u:1,d:0,b:1,sp:2,parent:"1381397"},
+            {id:"1503852",title:"[eB2B][Tech] Consider TTL for inventory data",assignee:"",state:"Ready for Sprint testing",tags:["eB2B", "NoQA", "NoValidation"],ux_ui:0,data_rel:0,t:0,u:0,d:0,b:0,sp:2,parent:"1381356"},
+            {id:"1504374",title:"[OM][NFR][Tech] Materials - Synchronize Product Long Description & Minimum Order Quantity 🚩",assignee:"",state:"Ready for Sprint testing",tags:["0.6 Dependent", "eB2B", "NFR", "Order Mgmt"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:0,sp:1,parent:"1016086"},
+            {id:"1512760",title:"[eB2B][Change Request] Adyen Merchant Account - Align DEV5 for SAP E2E Testing",assignee:"",state:"Ready for Sprint testing",tags:["ChangeRequest", "eB2B"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:1,sp:1,parent:"1381469"},
+            {id:"1539830",title:"[eB2B][Tech] Rework auto delete expired webcarts flow as scheduled apex",assignee:"",state:"Ready for Sprint testing",tags:["eB2B", "NoQA", "NoValidation"],ux_ui:0,data_rel:0,t:0,u:0,d:0,b:0,sp:5,parent:"1381363"},
+            {id:"1539862",title:"[eB2B][Tech] Ensure addToCart in apex checks entitlement",assignee:"",state:"Ready for Sprint testing",tags:["eB2B", "NoQA", "NoValidation"],ux_ui:0,data_rel:0,t:0,u:0,d:0,b:0,sp:5,parent:"1381363"},
+            {id:"1543023",title:"[eB2B][Tech] Replace infinite Spinner on PLP with Empty Search Page",assignee:"",state:"Ready for Sprint testing",tags:["eB2B", "NoQA", "NoValidation"],ux_ui:0,data_rel:0,t:0,u:0,d:0,b:0,sp:3,parent:"1381363"},
+            {id:"1543268",title:"[eB2B][Tech] Configure Experience Cloud CSP for Digital Experience Tools",assignee:"",state:"Ready for Sprint testing",tags:["Build", "eB2B", "NoValidation", "Salesforce"],ux_ui:0,data_rel:0,t:0,u:0,d:0,b:0,sp:2,parent:"1381364"},
+            {id:"1544441",title:"[eB2B][Change Request] Sellable Finished Goods - Fallback to Base UoM when Sales UoM is unavailable",assignee:"",state:"Ready for Sprint testing",tags:["ChangeRequest", "eB2B", "SF_eB2B_Add products to Cart via Product Catalogue", "UX"],ux_ui:0,data_rel:0,t:1,u:0,d:0,b:1,sp:1,parent:"1381430"},
+            {id:"1558373",title:"[eB2B][Tech] Move negotiated price to org cache instead of session cache",assignee:"",state:"Ready for Sprint testing",tags:["eB2B", "NoQA", "NoValidation"],ux_ui:0,data_rel:0,t:0,u:0,d:0,b:0,sp:2,parent:"1381356"}
         ];
 
         // Derive the working maps from the single source
@@ -1018,7 +1018,7 @@
         let processedStories = [];
         let allStoriesForFiltering = [];
 
-        // Salesforce team members — used to distinguish "Being Finalised" vs "Finalised" in Design Review
+        // Salesforce team members (retained for reference; solutioning status now derives from State alone)
         const solutioningOwners = ["Edouard", "Harry", "Antoine", "Eline", "Cristina", "Justine", "Julie", "Noémie", "Aude", "Diane", "Riad", "Lhoucine", "Mohammed-Mahmoud", "Najat", "Sara", "Hamza"];
 
         sprintScope.forEach(story => {
@@ -1028,14 +1028,14 @@
             // Solutioning status derived from ADO State + Assignee:
             //  - State New                                        -> Not Started
             //  - State In Design                                  -> Being Worked On
-            //  - State Design Review + SF team assignee           -> Being Finalised
-            //  - State Design Review (unassigned / non-SF) or any state beyond -> Finalised
+            //  - State Design Completed                           -> Being Finalised
+            //  - Any state beyond Design Completed                -> Finalised
             let solutioningStatus;
             if (meta.state === "New") {
                 solutioningStatus = "Not Started";
             } else if (meta.state === "In Design") {
                 solutioningStatus = "Being Worked On";
-            } else if (meta.state === "Design Review" && solutioningOwners.includes(meta.assignee)) {
+            } else if (meta.state === "Design Completed") {
                 solutioningStatus = "Being Finalised";
             } else {
                 solutioningStatus = "Finalised";
